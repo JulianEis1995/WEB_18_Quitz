@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MariaDB - @localhost" uuid="0588d351-3561-4904-a094-8240f93d44e7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root@localhost</user-name>
+    </data-source>
+  </component>
+</project>
