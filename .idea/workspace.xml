@@ -79,12 +79,6 @@
             </path>
             <path>
               <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
-              <item name="quidz" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
@@ -131,12 +125,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554658800257</updated>
       <workItem from="1554658803267" duration="769000" />
-      <workItem from="1554659601749" duration="638000" />
+      <workItem from="1554659601749" duration="883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1407000" />
+    <option name="totallyTimeSpent" value="1652000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
