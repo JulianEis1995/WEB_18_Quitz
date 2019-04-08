@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <title>Hello, world!</title>
     <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/stylelogin.css" media="screen">
+
 </head>
 <body>
-<h1>Hello, world!</h1>
     <!-- Buttons -->
-    <button type="button" class="btn btn-outline-primary">Spiel Starten</button>
-    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalOptionen">Optionen</button>
-    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalSpielBestenliste">Bestenliste</button>
-    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalSpielAnleitung">Anleitung</button>
+<div class="flex-container">
+    <div class ="flex-item">
 
+        <button type="button" class="btn btn-large btn-block btn-primary">Spiel Starten</button>
+
+        <button type="button" class="btn btn-outline-primary btn-large btn-block"  data-toggle="modal" data-target="#ModalOptionen">Optionen</button>
+
+        <button type="button" class="btn btn-outline-primary btn-large btn-block" data-toggle="modal" data-target="#ModalSpielBestenliste">Bestenliste</button>
+
+        <button type="button" class="btn btn-outline-primary btn-large btn-block" data-toggle="modal" data-target="#ModalSpielAnleitung">Anleitung</button>
+    </div>
+</div>
 
     <!-- Modal Optionen-->
     <div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
@@ -69,7 +76,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                Jeder Kandidat bekommt ein Spielmodul. Die Quizkarten werden nun nach ihrem Geldwert auf 15 Stapel verteilt. Einer der Mitspieler ist der Quizmaster. Er nimmt die erste 50€ Karte und steckt diese in sein Modul. Wichtig hierbei ist, dass er die Rückseite des Spielmoduls verdeckt, da dort die Antwort zu sehen ist. Nun versucht jeder Spieler für sich das Ziel der Million zu erreichen. Hierfür schiebt er drei der vier Regler so zurecht, dass nur noch der Buchstabe seiner Antwort zu sehen ist.
+                Wer zuerst die 15. und damit Millionenfrage erreicht hat, hat dieses Spiel gewonnen. Es kann aber auch vor Spielbeginn eine gewisse Rundenzahl genannt werden die das Ende des Spiels bedeutet. In dieser Variante gewinnt der Spieler, der zu diesem Zeitpunkt die meißten Fragen fehlerfrei beantwortet hat.
+                Natürlich gibt es auch die bekannten drei Joker bei Wer wird Millinär?. Bei dem 50:50 Joker streicht der Moderator zwei der falschen Antworten. Wählt man den Publikumsjoker, antworten die Mitspieler verdeckt auf ihrem Spielmodul. Diese zeigen nun ihre Karten dem Spielführer und er verkündet das Ergebniss der Antworten. Der allzeit beliebte Telefonjoker darf natürlich auch nicht fehlen. Jedoch wird nicht wirklich jemand angerufen, sondern man sucht sich aus der Runde einen Kandidaten aus, der die Frage beantworten soll. Dieser versucht nun ehrlich seine Meinung kundzutun.
+                Die Spieldauer beträgt je nach gewählter Variante ca. 45 Minuten. Ein Spielspaß für die ganze Familie.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -84,4 +94,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
+<footer></footer>
+
 </html>

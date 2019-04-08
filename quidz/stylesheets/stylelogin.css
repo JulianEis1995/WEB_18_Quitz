@@ -1,31 +1,60 @@
+body, html{
+    height:100%;
+    width:100%;
+    padding:0px;
+    margin:0px;
+}
+hr
+{
 
-.login{
-
-    margin-top: 10%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 15px;
-
-
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em ;
+    padding: 0;
 }
 
-.regis{
-    margin-top: 10%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 15px;
+.regis, .login{
+    margin: 10% 15% 15px;
 }
 
 .logo {
-    width: 75px;
+    width: 150px;
     height: 75px;
-    margin-left: 10%;
+    margin-left: 7%;
     margin-top: 50px;
 }
 
 .knopf{
+
     margin-left: 70%;
-    width: 120px;
-    height: 30px;
     font-size: 15px;
 }
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:85%;
+}
+.flex-item
+{
+    width: 30%;
+}
+
+.btn
+{
+    padding: 50px;
+    font-size: 30px;
+}
+
+
+.container-fluid
+{
+    padding-top: 20px;
+    background-color: lightgrey;
+
+}
+
