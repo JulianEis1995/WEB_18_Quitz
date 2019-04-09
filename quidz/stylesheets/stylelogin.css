@@ -37,19 +37,24 @@ hr
     display: flex;
     justify-content: center;
     align-items: center;
-    height:85%;
+    height:100%;
 }
 .flex-item
 {
     width: 30%;
 }
 
-.btn
+.btn-mid
 {
     padding: 50px;
     font-size: 30px;
 }
 
+.btn-option
+{
+    padding: 30px;
+    font-size: 16px;
+}
 
 .container-fluid
 {
