@@ -11,11 +11,36 @@
 
 </head>
 <body>
-<form method="get" action="http://localhost/Quid/WEB_18_Quitz/quidz/php/login.php" >
-    <button type="submit" id="login" name="absenden" class="btn btn-primary">Login/Signup</button>
+
+<form action="" method="post">
+    <button type="submit" id="logout" name="abmelden" class="btn btn-primary">Logout</button>
 
 </form>
-    <!-- Buttons -->
+
+<?php
+
+// Als Daten müssen folgende nacheinander eingetragen werden
+// Host | Meist localhost
+// Benutzer | Benutzername der Datenbank
+// Passwort | Passwort der Datenbank. Wenn keins vorhanden einfach leer lasssen
+// Datenbank | Name der Datenbank
+$db = new mysqli('localhost','quidz','','quidz');
+if($db->connect_error):
+  echo $db->connect_error;
+endif;
+
+
+
+
+  if(isset($_POST['abmelden'])):
+    session_destroy();
+    header('Location: login.php');
+  endif;
+
+
+
+?>
+<!-- Buttons -->
 <div class="flex-container">
     <div class ="flex-item">
 
@@ -29,26 +54,26 @@
     </div>
 </div>
 
-    <!-- Modal Optionen-->
-    <div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalOptionenTitle">Optionen</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel fortsetzen</button>
-                    <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel beenden</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+<!-- Modal Optionen-->
+<div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalOptionenTitle">Optionen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel fortsetzen</button>
+                <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel beenden</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
 <!-- Modal Bestenliste-->
 <div class="modal fade" id="ModalSpielBestenliste" tabindex="-1" role="dialog" aria-labelledby="ModalSpielBestenlisteTitle" aria-hidden="true">
@@ -92,6 +117,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Optional JavaScript -->
 
