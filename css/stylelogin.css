@@ -1,0 +1,67 @@
+body, html{
+    height:100%;
+    width:100%;
+    padding:0px;
+    margin:0px;
+}
+hr
+{
+
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em ;
+    padding: 0;
+}
+
+.regis, .login{
+    margin: 10% 15% 15px;
+}
+
+.logo {
+    width: 150px;
+    height: 75px;
+    margin-left: 7%;
+    margin-top: 50px;
+}
+
+.knopf{
+
+    margin-left: 70%;
+    font-size: 15px;
+}
+
+.flex-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+.flex-item
+{
+    width: 30%;
+}
+
+.btn-mid
+{
+    padding: 50px;
+    font-size: 30px;
+}
+
+.btn-option
+{
+    padding: 30px;
+    font-size: 16px;
+}
+
+.container-fluid
+{
+    padding-top: 20px;
+    background-color: lightgrey;
+
+}
+
+
+
