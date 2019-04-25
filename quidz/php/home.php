@@ -13,7 +13,7 @@
 <body>
 <!-- Buttons -->
 
-<form method="get" action="http://localhost/Quid/WEB_18_Quitz/quidz/php/login.php" >
+<form method="get" action="http://localhost/WEB_18_Quitz/quidz/php/login.php" >
     <button type="submit" id="login" name="absenden" class="btn btn-primary">Login/Signup</button>
 
 </form>
