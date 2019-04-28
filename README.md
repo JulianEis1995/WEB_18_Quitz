@@ -20,6 +20,17 @@ Die Datenbank wird mithilfe von XAMPP bereitgestellt (MySQL). Dabei befindet sic
 - Insert in die DB für Bestenliste und Registrierung
 
 ## Front-End Development
+Die Front-End Implementierung erfolgt mittels HTML, CSS (Bootstrap) und javascript. Folgendes wird durch die einzelnen Technologien abgebildet:
 
+- HTML: Darstellung der Website
+- CSS: Layout und Design (Bootstrap als Basis)
+- Javascript: Login-Überprüfung
 
 ## Back-End Development
+Das Back-End wird mittels PHP umgesetzt. Dazu muss PHP folgende Aufgaben erfüllen können:
+
+- DB-Verbindung mit MySQL XAMPP
+- Abfrage der richtigen Daten aus der DB
+- Erstellung einer View für Bestenliste
+- Einstellung des Schwierigkeitsgrades
+- Abfrage der Fragen aus der DB und Überprüfung auf Richtigkeit
