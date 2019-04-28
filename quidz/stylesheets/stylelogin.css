@@ -1,9 +1,9 @@
-body, html{
-    height:100%;
-    width:100%;
-    padding:0px;
-    margin:0px;
+body, html
+{
+    height: 100%;
+    display: grid;
 }
+
 hr
 {
 
@@ -13,8 +13,8 @@ hr
     border-top: 1px solid #ccc;
     margin: 1em ;
     padding: 0;
-}
 
+}
 .regis, .login{
     margin: 10% 15% 15px;
 }
@@ -32,29 +32,12 @@ hr
     font-size: 15px;
 }
 
-.flex-container
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100%;
-}
-.flex-item
-{
-    width: 30%;
-}
-
 .btn-mid
 {
-    padding: 50px;
-    font-size: 30px;
+    padding: 30px;
+    font-size: 15px;
 }
 
-.btn-option
-{
-    padding: 30px;
-    font-size: 16px;
-}
 
 .container-fluid
 {
@@ -62,6 +45,4 @@ hr
     background-color: lightgrey;
 
 }
-
-
 
