@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="756a7ff7-d7ce-4876-8d23-b271b7a64d8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quidz/html/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quidz/html/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/quidz/logo/quidz.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quidz/php/game.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/quidz/html/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/quidz/html/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/stylelogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/quidz/stylesheets/stylelogin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quidz/html/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/quidz/html/game.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,47 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quidz/html/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quidz/html/Login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="15" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quidz/stylesheets/stylelogin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/quidz/html/header.html">
+        <entry file="file://$PROJECT_DIR$/quidz/php/game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="198">
+              <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quidz/html/footer.html">
+        <entry file="file://$PROJECT_DIR$/quidz/html/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="137">
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -101,11 +69,13 @@
         <option value="$PROJECT_DIR$/quidz/html/footer.html" />
         <option value="$PROJECT_DIR$/quidz/stylesheets/stylelogin.css" />
         <option value="$PROJECT_DIR$/quidz/html/header.html" />
+        <option value="$PROJECT_DIR$/quidz/html/game.html" />
+        <option value="$PROJECT_DIR$/quidz/php/game.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="676" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -115,58 +85,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB_18_Quitz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEB_18_Quitz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB_18_Quitz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEB_18_Quitz" type="462c0819:PsiDirectoryNode" />
               <item name="quidz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB_18_Quitz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEB_18_Quitz" type="462c0819:PsiDirectoryNode" />
               <item name="quidz" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB_18_Quitz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEB_18_Quitz" type="462c0819:PsiDirectoryNode" />
               <item name="quidz" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
-              <item name="quidz" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
-              <item name="quidz" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projektarbeit" type="462c0819:PsiDirectoryNode" />
-              <item name="quidz" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="Projektarbeit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,11 +167,13 @@
       <workItem from="1554718457894" duration="1097000" />
       <workItem from="1554735649979" duration="7000" />
       <workItem from="1554743832119" duration="3964000" />
+      <workItem from="1556381881304" duration="1446000" />
+      <workItem from="1556439472576" duration="2226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13726000" />
+    <option name="totallyTimeSpent" value="17398000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -236,10 +185,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11406995" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18381241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -253,7 +202,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32969603" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32405892" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -309,6 +258,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quidz/html/test.html" />
+    <entry file="file://$PROJECT_DIR$/quidz/html/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quidz/php/Spiellogik.php" />
+    <entry file="file://$PROJECT_DIR$/quidz/html/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quidz/php/homelogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quidz/html/Login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -323,13 +292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quidz/html/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quidz/stylesheets/stylelogin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -337,10 +299,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quidz/html/header.html">
+    <entry file="file://$PROJECT_DIR$/quidz/php/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="1972">
+          <caret line="116" column="7" lean-forward="true" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quidz/html/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quidz/php/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
         </state>
       </provider>
     </entry>

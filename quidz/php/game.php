@@ -1,3 +1,39 @@
+<?php
+// Verbindung
+
+//verbindung erstellen
+$db=mysqli_connect('localhost', 'quidz', '', 'quidz');
+
+//check connection
+if(mysqli_connect_errno()){
+    echo 'connection Failed' . mysqli_connect_errno();
+}
+
+//create Querry
+$query1='SELECT * FROM tquestions WHERE SID==1';
+$query2='SELECT * FROM tquestions WHERE SID==2';
+$query3='SELECT * FROM tquestions WHERE SID==3';
+
+//get result
+$result1=mysqli_query($db, $query1);
+$result2=mysqli_query($db, $query2);
+$result3=mysqli_query($db, $query3);
+
+// fetch Data
+$fragen1=mysqli_fetch_all($result1, MYSQLI_ASSOC);
+$fragen2=mysqli_fetch_all($result2, MYSQLI_ASSOC);
+$fragen3=mysqli_fetch_all($result3, MYSQLI_ASSOC);
+
+//Free result
+mysqli_free_result($result1);
+mysqli_free_result($result2);
+mysqli_free_result($result3);
+
+//close
+mysqli_close($db);
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,11 +48,19 @@
     <link rel="stylesheet" href="../stylesheets/spielfeld.css">
 </head>
 <body>
+<?php foreach($fragen1 as $post1): foreach ($fragen2 as $post2): foreach ($fragen3 as $post3):        ?>
 <div class="Pause">
-<button type="button" class="btn btn-dark">Pause</button>
+    <button type="button" class="btn btn-dark">Pause</button>
 </div>
 <div class="Frage">
-<p></p>
+    <p><?php if(SID==1){
+        echo $post1['question'];}
+        else if(SID==2){
+            echo $post2['question'];
+            }
+        else
+        {echo $post3['question'];}
+                ?></p>
 </div>
 
 <div class="Liste">
@@ -40,7 +84,7 @@
 </div>
 
 <div class="Antwort1">
-<button type="button" class="btn btn-primary" class="Antwort1">Antwort 1</button>
+    <button type="button" class="btn btn-primary" class="Antwort1">Antwort 1</button>
 
     <button type="button" class="btn btn-primary" class="Antwort2">Antwort 2</button>
 </div>
@@ -49,6 +93,9 @@
 
     <button type="button" class="btn btn-primary" class="Antwort4">Antwort 4</button>
 </div>
+<?php endforeach; ?>
+<?php endforeach; ?>
+<?php endforeach; ?>
 
 
 
