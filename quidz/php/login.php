@@ -111,43 +111,44 @@
 
         <?php
 
-            //registrieren
-                    $db = new mysqli('localhost','quidz','','quidz');
-                    if($db->connect_error):
-                      echo $db->connect_error;
-                    endif;
-                    if(isset($_POST['absenden2'])):
+        //registrieren
+        $db = new mysqli('localhost','quidz','','quidz');
+        if($db->connect_error):
+            echo $db->connect_error;
+        endif;
+        if(isset($_POST['absenden2'])):
 
-                      $benutzername2 = $_POST['benutzername2'];
-                      $vorname2 = $_POST['vorname2'];
-                      $nachname2 = $_POST['nachname2'];
-                      $email = $_POST['email'];
-                      $passwort2 = $_POST['passwort2'];
-                      $passwort2_widerholen = $_POST['passwort2_wiederholen'];
+            $benutzername2 = $_POST['benutzername2'];
+            $vorname2 = $_POST['vorname2'];
+            $nachname2 = $_POST['nachname2'];
+            $email = $_POST['email'];
+            $passwort2 = $_POST['passwort2'];
+            $passwort2_widerholen = $_POST['passwort2_wiederholen'];
 
-                        $search_mail = $db->prepare("SELECT PID FROM tplayer WHERE mail = ?");
-                        $search_mail->bind_param('s',$email);
-                        $search_mail->execute();
-                        $search_mailresult = $search_mail->get_result();
-
-
-                      $search_user = $db->prepare("SELECT PID FROM tplayer WHERE username = ?");
-                      $search_user->bind_param('s',$benutzername2);
-                      $search_user->execute();
-                      $search_userresult = $search_user->get_result();
+            $search_mail = $db->prepare("SELECT PID FROM tplayer WHERE mail = ?");
+            $search_mail->bind_param('s',$email);
+            $search_mail->execute();
+            $search_mailresult = $search_mail->get_result();
 
 
+            $search_user = $db->prepare("SELECT PID FROM tplayer WHERE username = ?");
+            $search_user->bind_param('s',$benutzername2);
+            $search_user->execute();
+            $search_userresult = $search_user->get_result();
 
 
-                      if($search_userresult->num_rows == 0):
-                          if($search_mailresult->num_rows == 0):
 
-                              if ($benutzername2 !== "" && $vorname2 !== "" && $nachname2 !== "" && $email !== "" && $passwort2 !== "" && $passwort2_widerholen !== ""):
+
+            if($search_userresult->num_rows == 0):
+                if($search_mailresult->num_rows == 0):
+
+                    if ($benutzername2 !== "" && $vorname2 !== "" && $nachname2 !== "" && $email !== "" && $passwort2 !== "" && $passwort2_widerholen !== ""):
 
                         if($passwort2 == $passwort2_widerholen):
-                          $insert = $db->prepare("INSERT INTO tplayer (username,vname, nname, mail, pwd) VALUES (?,?,?,?,?)");
-                          $insert->bind_param('sssss',$benutzername2, $vorname2, $nachname2, $email, $passwort2);
-                          $insert->execute();
+                            $passwort2 = md5($passwort2);
+                            $insert = $db->prepare("INSERT INTO tplayer (username,vname, nname, mail, pwd) VALUES (?,?,?,?,?)");
+                            $insert->bind_param('sssss',$benutzername2, $vorname2, $nachname2, $email, $passwort2);
+                            $insert->execute();
 
                             if (isset($_POST['absenden2'])) {
                                 if ($_POST['benutzername2'] == "" || $_POST['vorname2'] == "" || $_POST['nachname2'] == "" || $_POST['email'] == "" || $_POST['passwort2'] == "" || $_POST['passwort2_wiederholen'] == "") {
@@ -158,28 +159,29 @@
                             }
 
 
-                          if($insert !== false):
-                            echo 'Account wurde erfolgreich erstellt!';
-                          endif;
+                            if($insert !== false):
+                                echo 'Account wurde erfolgreich erstellt!';
+                            endif;
 
                         else:
-                          echo 'Passwörter stimmen nicht überein!';
+                            echo 'Passwörter stimmen nicht überein!';
                         endif;
-                        else:
-                            echo 'Alle Felder müssen ausgefüllt sein';
-                        endif;
-                        else:
-                              echo 'Email ist vergeben!';
-                          endif;
-                      else:
-                        echo 'Benutzername ist vergeben!';
-                      endif;
-                      endif;
+                    else:
+                        echo 'Alle Felder müssen ausgefüllt sein';
+                    endif;
+                else:
+                    echo 'Email ist vergeben!';
+                endif;
+            else:
+                echo 'Benutzername ist vergeben!';
+            endif;
+        endif;
 
-     //login
+        //login
         if(isset($_POST['absenden'])):
             $benutzername = strtolower($_POST['benutzername']);
             $passwort = $_POST['passwort'];
+            $passwort = md5($passwort);
 
             $search_user2 = $db->prepare("SELECT PID FROM tplayer WHERE username = ? AND pwd = ?");
             $search_user2->bind_param('ss',$benutzername,$passwort);
@@ -190,14 +192,14 @@
                 $search_object = $search_result->fetch_object();
 
 
-               $_SESSION['user'] = $search_object->PID;
+                $_SESSION['user'] = $search_object->PID;
                 header('Location: homelogin.php');
             else:
                 echo 'Deine Angaben sind leider nicht korrekt!';
             endif;
         endif;
 
-?>
+        ?>
 
     </div>
 </div>
