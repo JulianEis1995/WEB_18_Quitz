@@ -54,65 +54,11 @@
             document.getElementById("msg").innerHTML = strength;
             document.getElementById("msg").style.color = color;
         }
-    </script>
-
-
-</head>
-<body>
-<div class="container">
-    <div class="row">
-
-
-        <form class="login" action="" method="post">
-            <div class="form-group">
-                <label>Login</label>
-                <input type="username" name="benutzername" class="form-control"  placeholder="Benutzername">
-            </div>
-            <div class="form-group">
-
-                <input type="password" name="passwort" class="form-control"placeholder="Passwort">
-            </div>
-
-            <button type="submit" name="absenden" class="btn btn-primary">Login</button>
-        </form>
-
-        <form class="regis" action="" method="post">
-            <div class="form-group">
-                <label>Signup</label>
-                <input type="username" name="benutzername2" class="form-control"  placeholder="Benutzername">
-            </div>
-            <div class="form-group">
-
-                <input type="firstname" name="vorname2" class="form-control"  placeholder="Vorname">
-            </div>
-
-            <div class="form-group">
-
-                <input type="lastname" name="nachname2" class="form-control"placeholder="Nachname">
-            </div>
-
-            <div class="form-group">
-
-                <input type="email" name="email" class="form-control"placeholder="E-Mail">
-            </div>
-
-            <div class="form-group">
-
-                <input type="password" name="passwort2" class="form-control"placeholder="Passwort" onkeyup="validatePassword(this.value);"><span id="msg"></span>
-            </div>
-
-            <div class="form-group">
-
-                <input type="password" name="passwort2_wiederholen" class="form-control"placeholder="Passwort wiederholen">
-            </div>
-
-            <button type="submit" name="absenden2" class="btn btn-primary">Signup</button>
-        </form>
 
         <?php
 
         //registrieren
-        $db = new mysqli('localhost','quidz','','quidz');
+        $db = new mysqli('localhost','root','','quidz');
         if($db->connect_error):
             echo $db->connect_error;
         endif;
@@ -193,13 +139,69 @@
 
 
                 $_SESSION['user'] = $search_object->PID;
-                header('Location: homelogin.php');
+                header('Location: ./homelogin.php');
             else:
                 echo 'Deine Angaben sind leider nicht korrekt!';
             endif;
         endif;
 
         ?>
+    </script>
+
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+
+        <form class="login" action="" method="post">
+            <div class="form-group">
+                <label>Login</label>
+                <input type="username" name="benutzername" class="form-control"  placeholder="Benutzername">
+            </div>
+            <div class="form-group">
+
+                <input type="password" name="passwort" class="form-control"placeholder="Passwort">
+            </div>
+
+            <button type="submit" name="absenden" class="btn btn-primary">Login</button>
+        </form>
+
+        <form class="regis" action="" method="post">
+            <div class="form-group">
+                <label>Signup</label>
+                <input type="username" name="benutzername2" class="form-control"  placeholder="Benutzername">
+            </div>
+            <div class="form-group">
+
+                <input type="firstname" name="vorname2" class="form-control"  placeholder="Vorname">
+            </div>
+
+            <div class="form-group">
+
+                <input type="lastname" name="nachname2" class="form-control"placeholder="Nachname">
+            </div>
+
+            <div class="form-group">
+
+                <input type="email" name="email" class="form-control"placeholder="E-Mail">
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" name="passwort2" class="form-control"placeholder="Passwort" onkeyup="validatePassword(this.value);"><span id="msg"></span>
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" name="passwort2_wiederholen" class="form-control"placeholder="Passwort wiederholen">
+            </div>
+
+            <button type="submit" name="absenden2" class="btn btn-primary">Signup</button>
+        </form>
+
+
 
     </div>
 </div>
