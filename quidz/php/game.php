@@ -5,14 +5,14 @@
 $db=mysqli_connect('localhost', 'quidz', '', 'quidz');
 
 //check connection
-if(mysqli_connect_errno()){
+if(!$db){
     echo 'connection Failed' . mysqli_connect_errno();
 }
 
 //create Querry
-$query1='SELECT * FROM tquestions WHERE SID==1';
-$query2='SELECT * FROM tquestions WHERE SID==2';
-$query3='SELECT * FROM tquestions WHERE SID==3';
+$query1="SELECT question FROM tquestions WHERE SID=1";
+$query2="SELECT question FROM tquestions WHERE SI==2";
+$query3="SELECT question FROM tquestions WHERE SID=3";
 
 //get result
 $result1=mysqli_query($db, $query1);
@@ -20,18 +20,21 @@ $result2=mysqli_query($db, $query2);
 $result3=mysqli_query($db, $query3);
 
 // fetch Data
-$fragen1=mysqli_fetch_all($result1, MYSQLI_ASSOC);
-$fragen2=mysqli_fetch_all($result2, MYSQLI_ASSOC);
-$fragen3=mysqli_fetch_all($result3, MYSQLI_ASSOC);
+while($fragen1 = $result1->fetch_assoc()){
+    echo $fragen1['int']."<br>";
+}
+$fragen2=mysqli_fetch_all("$result2", "MYSQLI_ASSOC");
+$fragen3=mysqli_fetch_all("$result3", "MYSQLI_ASSOC");
 
 //Free result
-mysqli_free_result($result1);
-mysqli_free_result($result2);
-mysqli_free_result($result3);
+mysqli_free_result("$result1");
+mysqli_free_result("$result2");
+mysqli_free_result("$result3");
 
 //close
 mysqli_close($db);
 
+$test='hello world';
 ?>
 
 <!doctype html>
@@ -60,6 +63,8 @@ mysqli_close($db);
             }
         else
         {echo $post3['question'];}
+
+        echo $test;
                 ?></p>
 </div>
 
