@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 // Verbindung
 
@@ -37,6 +39,7 @@ mysqli_close($db);
 $test='hello world';
 ?>
 
+>>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,11 +54,17 @@ $test='hello world';
     <link rel="stylesheet" href="../stylesheets/spielfeld.css">
 </head>
 <body>
+<<<<<<< HEAD
+=======
 <?php foreach($fragen1 as $post1): foreach ($fragen2 as $post2): foreach ($fragen3 as $post3):        ?>
+>>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
 <div class="Pause">
     <button type="button" class="btn btn-dark">Pause</button>
 </div>
 <div class="Frage">
+<<<<<<< HEAD
+    <p>Frage .</p>
+=======
     <p><?php if(SID==1){
         echo $post1['question'];}
         else if(SID==2){
@@ -66,6 +75,7 @@ $test='hello world';
 
         echo $test;
                 ?></p>
+>>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
 </div>
 
 <div class="Liste">
@@ -98,9 +108,12 @@ $test='hello world';
 
     <button type="button" class="btn btn-primary" class="Antwort4">Antwort 4</button>
 </div>
+<<<<<<< HEAD
+=======
 <?php endforeach; ?>
 <?php endforeach; ?>
 <?php endforeach; ?>
+>>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
 
 
 
@@ -110,4 +123,8 @@ $test='hello world';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
