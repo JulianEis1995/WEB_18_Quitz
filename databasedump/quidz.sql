@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
@@ -19,7 +19,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `quidz`
+-- Datenbank: `quitz`
+CREATE DATABASE IF NOT EXISTS QUITZ;
+
+-- Datenbank: 'quitz' verwenden
+USE QUITZ;
 --
 
 -- --------------------------------------------------------
@@ -31,7 +35,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tdifficulty` (
   `SID` int(11) NOT NULL,
   `description` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tdifficulty`
@@ -55,14 +59,24 @@ CREATE TABLE `tplayer` (
   `nname` varchar(150) DEFAULT NULL,
   `mail` varchar(200) DEFAULT NULL,
   `pwd` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tplayer`
 --
 
+-- Passwort: "Passwort"
 INSERT INTO `tplayer` (`PID`, `username`, `vname`, `nname`, `mail`, `pwd`) VALUES
-(25, 'test', 'test', 'test', 'test.ak@hotmail.com', 'test');
+(1, 'test', 'test', 'test', 'test.ak@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(2, 'wsw', 'Wendy', 'Swinger', 'wswinger@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(3, 'hme', 'Hans', 'Meier', 'wswinger@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(4, 'pkl', 'Peter', 'Klein', 'pkl@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(5, 'jel', 'Josef', 'Ellinger', 'jell@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(6, 'mma', 'Michael', 'Mayer', 'mem@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(7, 'jli', 'Jessica', 'Liebherr', 'jlie@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(8, 'mme', 'Markus', 'Meister', 'mame@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(9, 'mem', 'Matthias', 'Emil', 'maem@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112'),
+(10, 'che', 'Christian', 'Hell', 'che@hotmail.com', '3e45af4ca27ea2b03fc6183af40ea112');
 
 -- --------------------------------------------------------
 
@@ -79,7 +93,7 @@ CREATE TABLE `tquestions` (
   `a4` varchar(150) DEFAULT NULL,
   `ra` int(11) DEFAULT NULL,
   `SID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tquestions`
@@ -127,7 +141,22 @@ CREATE TABLE `tscoreboard` (
   `PID` int(11) NOT NULL,
   `time` time DEFAULT NULL,
   `price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tscoreboard`
+--
+INSERT INTO `tscoreboard`(`PID`, `time`, `price`) VALUES
+(1, '00:08:20', 500),
+(2, '01:03:20', 32000),
+(3, '04:02:00', 128000),
+(4, '00:30:20', 64000),
+(5, '00:24:03', 8000),
+(6, '00:21:00', 9000),
+(7, '00:31:00', 128000),
+(8, '01:32:11', 32000),
+(9, '02:32:10', 64000),
+(10, '00:00:45', 0);
 
 --
 -- Indizes der exportierten Tabellen
@@ -206,3 +235,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

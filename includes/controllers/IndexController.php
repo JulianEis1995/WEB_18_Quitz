@@ -14,7 +14,6 @@ class IndexController extends Controller
 		$this->view->title = "Übersicht";
 		$this->view->username = $this->user->username;
 
-		$this->view->addresses = AddressModel::getAddressesByUserId($this->user->id);
 	}
 
 }

@@ -1,6 +1,65 @@
 <?php
-echo $this->header;
+// Verbindung
+
+session_start();
+//Antwort möglichkeiten
+var_dump($_POST);
+
+//spielstart
+if(isset($_SESSION['gameStatus']) && $_SESSION['gameStatus'] == 'gameOver' || !isset($_SESSION['gameStatus'])) {
+    $_SESSION['gameStatus'] = 'running';
+    $_SESSION['questionsAsked'] = array();
+}
+//Schwierigkeit für seite
+if($_SESSION['gameStatus'] == 'running') {
+    $sid = $_GET['sid'];
+}
+    //frage besorgen
+
+    $db= new mysqli('localhost', 'root', '', 'quitz');
+
+    //check connection
+        if(!$db){
+            echo 'connection Failed' . mysqli_connect_errno();
+        }
+
+    $db->query("SET NAMES 'utf8'");
+
+    //Frage herausziehen
+    $questionsAskedString = implode(',', $_SESSION['questionsAsked']);
+
+        $optionalExclude = '';
+
+    if($questionsAskedString != '') {
+        $optionalExclude = 'AND FID NOT IN ('.$questionsAskedString.')';
+    }
+
+        $sql="SELECT * FROM tquestions WHERE SID=".intval($sid).' '.$optionalExclude.' LIMIT 1';
+
+
+        $fragenresult = $db->query($sql);
+
+        if($fragenresult == false) {
+            echo $db->error;
+        }
+        else{
+            $fragenObject = $fragenresult->fetch_object();
+        }
+        //var_dump($fragenresult);
+
+
+
+
+
+    //close
+        $db->close();
+
+
+
+
 ?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,14 +67,25 @@ echo $this->header;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Spielfeld</title>
+    <link rel="stylesheet" href="../stylesheets/spielfeld.css">
 </head>
 <body>
+
+
+
 <div class="Pause">
-<button type="button" class="btn btn-dark">Pause</button>
+    <button type="button" class="btn btn-dark">Pause</button>
 </div>
 <div class="Frage">
-<p>Frage .</p>
+
+    <p><?php echo $fragenObject->question; ?></p>
+
+
+
 </div>
 
 <div class="Liste">
@@ -38,16 +108,23 @@ echo $this->header;
     </ul>
 </div>
 
-<div class="Antwort1">
-<button type="button" class="btn btn-primary" class="Antwort1">Antwort 1</button>
+<form method="post">
 
-    <button type="button" class="btn btn-primary" class="Antwort2">Antwort 2</button>
+<div class="Antwort1">
+    <button type="submit" class="btn btn-primary" class="Antwort1" name="a1"><?php echo $fragenObject->a1; ?></button>
+
+    <button type="submit" class="btn btn-primary" class="Antwort2"  name="a2"><?php echo $fragenObject->a2; ?></button>
 </div>
 <div class="Antwort3">
-    <button type="button" class="btn btn-primary" class="Antwort3">Antwort 3</button>
+    <button type="submit" class="btn btn-primary" class="Antwort3"  name="a3"><?php echo $fragenObject->a3; ?></button>
 
-    <button type="button" class="btn btn-primary" class="Antwort4">Antwort 4</button>
+    <button type="submit" class="btn btn-primary" class="Antwort4"  name="a4"><?php echo $fragenObject->a4; ?></button>
 </div>
+<input type="hidden" name="fid" value="<?php echo $fragenObject->FID; ?>">
+<input type="hidden" name="action" value="answer">
+</form>
+
+
 
 
 
@@ -59,8 +136,3 @@ echo $this->header;
 </body>
 </html>
 
-<?php
-
-echo $this->footer;
-
-?>
