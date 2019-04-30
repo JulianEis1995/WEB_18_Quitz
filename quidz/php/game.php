@@ -36,7 +36,7 @@ if(!$db){
     echo 'connection Failed' . mysqli_connect_errno();
 }
 //Frage herausziehen
-$questionsAskedString = implode(',', $_SESSION['questionsAsked']);
+$questionsAskedString = implode(',', unserialize($_SESSION['questionsAsked']));
 $optionalExclude = '';
 if($questionsAskedString != '') {
     $optionalExclude = 'AND FID NOT IN ('.$questionsAskedString.')';
@@ -49,6 +49,16 @@ if($fragenresult == false) {
 else{
     $fragenObject = $fragenresult->fetch_object();
 }
+
+//pruefen $fragenObject == null?
+if($fragenObject == null)
+{
+    $_SESSION['questionsAsked'] = '';
+
+    //speichern score in der Datenbank
+    //Redirect auf eine andere SEite?
+}
+//$fragenresult == null?
 //var_dump($fragenresult);
 //close
 
@@ -96,6 +106,12 @@ if(isset($_POST['action']) == 'answer') {
 
         }
     }
+
+    $alreadyAnsweredQuestions = unserialize($_SESSION['questionsAsked']);
+
+    $alreadyAnsweredQuestions[] = $_POST['fid'];
+
+    $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
 }
 
 
