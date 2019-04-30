@@ -1,0 +1,32 @@
+body{
+    margin: auto;
+}
+
+.Antwort1{
+    position:absolute;
+   margin-left: 40%;
+    margin-top: 15%;
+
+}
+
+.Antwort3{
+    position:absolute;
+    margin-left: 40%;
+    margin-top: 18%;
+
+}
+
+.Frage{
+    position:absolute;
+    margin-top: 10%;
+    margin-left: 40%;
+    width: 425px;
+}
+
+.Liste {
+    position:absolute;
+    margin-left: 90%;
+    margin-top:0px;
+    width:10%;
+    height: 5%;
+}
