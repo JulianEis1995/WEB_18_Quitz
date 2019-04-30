@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 22. Apr 2019 um 13:12
+-- Erstellungszeit: 30. Apr 2019 um 13:44
 -- Server-Version: 10.1.38-MariaDB
 -- PHP-Version: 7.3.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `quidz`
+-- Datenbank: `quitz`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tdifficulty` (
   `SID` int(11) NOT NULL,
   `description` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tdifficulty`
@@ -55,14 +55,23 @@ CREATE TABLE `tplayer` (
   `nname` varchar(150) DEFAULT NULL,
   `mail` varchar(200) DEFAULT NULL,
   `pwd` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tplayer`
 --
 
 INSERT INTO `tplayer` (`PID`, `username`, `vname`, `nname`, `mail`, `pwd`) VALUES
-(25, 'test', 'test', 'test', 'test.ak@hotmail.com', 'test');
+(1, 'test', 'test', 'test', 'test.ak@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(2, 'wsw', 'Wendy', 'Swinger', 'wswinger@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(3, 'hme', 'Hans', 'Meier', 'wswinger@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(4, 'pkl', 'Peter', 'Klein', 'pkl@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(5, 'jel', 'Josef', 'Ellinger', 'jell@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(6, 'mma', 'Michael', 'Mayer', 'mem@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(7, 'jli', 'Jessica', 'Liebherr', 'jlie@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(8, 'mme', 'Markus', 'Meister', 'mame@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(9, 'mem', 'Matthias', 'Emil', 'maem@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
+(10, 'che', 'Christian', 'Hell', 'che@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81');
 
 -- --------------------------------------------------------
 
@@ -77,45 +86,45 @@ CREATE TABLE `tquestions` (
   `a2` varchar(150) DEFAULT NULL,
   `a3` varchar(150) DEFAULT NULL,
   `a4` varchar(150) DEFAULT NULL,
-  `ra` int(11) DEFAULT NULL,
+  `ra` varchar(100) DEFAULT NULL,
   `SID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `tquestions`
 --
 
 INSERT INTO `tquestions` (`FID`, `question`, `a1`, `a2`, `a3`, `a4`, `ra`, `SID`) VALUES
-(1, 'Was trägt man eher unfreiwillig?', 'Halskette', 'Armreif', 'Augenringe', 'Piercing', 3, 1),
-(2, 'Wer war Kurfürst von Sachsen und König von Polen?', 'November der Große', 'Februar der Fromme', 'Juni der Schöne', 'August der Starke', 4, 3),
-(3, 'In welcher Einheit gibt man die Größe von Bildschirmen oder Disketten an?', 'Zoll', 'Polizei', 'Rettung', 'Feuerwehr', 1, 1),
-(4, 'Wie heißt eine Kulturart des Lauchs?', 'Brigidde', 'Schalotte', 'Schantall', 'Dschenniffa', 2, 3),
-(5, 'Gegen das Zu-Wasser-Lassen einer Ente wehrt sich in einem Loriot-Sketch Herr ...?', 'Maier-Leverkuhsen', 'Müller-Lüdenscheidt', 'Weber-Magdeburch', 'Schröder-Düsseldoof', 2, 2),
-(6, 'Kommt in Filmen ein Defibrillator zum Einsatz, heißt es oft: ??\r\n', 'Ab ins Bett!', 'Füße vom Stuhl!', 'Vor die Tür!', 'Weg vom Tisch!', 4, 2),
-(7, 'Wer oder was ist im Jahre 79 n.Chr. ausgebrochen?', 'Schweinegrippe', 'Pablo Escobar', 'Vesuv', 'Vogelgrippe', 3, 2),
-(8, 'ine von Sehnsucht und Melancholie geprägte portugiesische Musikrichtung ist der ...?', 'Monotono', 'Tristo', 'Fado', 'Ödo', 3, 2),
-(9, 'Auf dem Weg zwischen welchen Metropolen muss man zwangsläufig ein Meer überqueren?', 'Moskau - New York', 'Madrid - Oslo', 'Peking - Kapstadt', 'Montevideo - Montreal', 1, 2),
-(10, 'Glaubt man der Wortherkunft, so teilte man mit seinen \"Kumpanen\" ursprünglich ...?', 'das Brot', 'den Beruf', 'die Beute', 'die Geliebte', 1, 1),
-(11, 'Charles de Gaulle wird mit dem Satz zitiert: \"Es ist schwer, ein Volk zu regieren, das ...\"?', 'einen König will', 'von Obelix abstammt', '246 Sorten Käse hat', 'von Asterix abstammt', 3, 1),
-(12, 'Was ist die Kleine Rheinländerin?\r\n', 'inaktiver Vulkan', 'beliebte Erbsensorte', 'lieblicher Rotwein', 'Walzer von Strauß', 2, 3),
-(13, 'Wer war einer der Helden von Bern?', 'Heinrich Heyne', 'Karl Mai', 'Bert Brächt', 'Günter Graß', 2, 3),
-(14, 'Wer steht auf der \"Roten Liste\" gefährdeter Tiere Deutschlands?', 'Hausschaf', 'Hausratte', 'Haushund', 'Hauskatze', 2, 1),
-(15, 'Nicht nur Literaturfreunde lieben es, in der Silvesternacht zu ...?', 'grassern', 'böllern', 'jagen', 'springen', 2, 1),
-(16, 'Was heute ganz schick \"Cocooning\" genannt wird, war schon immer die Lieblingsbeschäftigung der ...?', 'Stubenhocker', 'Wandervögel', 'Sportskanonen', 'Discomäuschen', 1, 3),
-(17, 'Was vereinte im Sommer die Massen vor der Großbildleinwand?', 'J.R. Viewing', 'Miss Ellie Viewing', 'Bobby Viewing', 'Public Viewing', 4, 1),
-(18, 'Was ist als Anrede für eines der begehrtesten Models der Welt vollkommen angemessen?', 'Tachalte', 'Eytante', 'Himutti', 'Naomi', 4, 1),
-(19, 'Welcher \"Fisch\" wurde erst 1985 in London \"entdeckt\"?', 'Müller-Forelle', 'Schulze-Scholle', 'Becker-Hecht', 'Maier-Barsch', 3, 2),
-(20, 'Den Discohit \"Follow Me\" sang mit tiefer Stimme Amanda ??', 'Hamlet', 'Othello', 'Lear', 'Macbeth', 3, 2),
-(21, 'In der Fußballbundesliga kann es durchaus vorkommen, dass ...?', 'Erna Westfalen haut', 'Frieda Hessen prügelt', 'Rita Friesen versohlt', 'Hertha Bayern schlägt', 4, 2),
-(22, 'Was haben die Comicfiguren Homer Simpson, Micky Maus und Fred Feuerstein gemeinsam?', 'kein Haupthaar', 'unverheiratet', 'Sprachfehler', 'vier Finger pro Hand', 4, 1),
-(23, 'Wer war der erste SPD-Vorsitzende nach dem Zweiten Weltkrieg?', 'Schumacher', 'Frentzen', 'Heidfeld', 'Rosberg', 1, 2),
-(24, 'Was sind aufschauender Hund, halbe Heuschrecke, sitzender Held und schlafende Schildkröte?', 'Sternbilder', 'Yoga-Übungen', 'Dachziegel', 'Indianer bei Karl May', 2, 1),
-(25, 'Welches berühmte New Yorker Bauwerk schuf der Architekt Frank Lloyd Wright?', 'Guggenheim Museum', 'Freiheitsstatue', 'Empire State Building', 'Brooklyn Bridge', 1, 3),
-(26, 'Welche berühmte Figur heißt mit Vornamen John?', 'Dr. Kimble', 'Dr. Dolittle', 'Dr. Jekyll', 'Dr. Jekyll', 2, 3),
-(27, 'Wo findet man Isohypsen?', 'Powerdrinks', 'Integralgleichungen', 'Landkarten', 'Turnhallen', 3, 2),
-(28, 'Wofür steht das \"Sint\" in Sintflut?', 'Strafe', 'immerwährend', 'siebente', 'Gott', 2, 3),
-(29, 'Die aus Ostasien stammende Staude Zingiber officinalis ist hierzulande bekannt als ...?', 'Zitrone', 'Ingwer', 'Melone', 'Orange', 2, 3),
-(30, 'Was spielt eine gewichtige Rolle in der nordischen Mythologie?', 'Odins Inbusschlüssel', 'Lokis Zollstock', 'Thors Hammer', 'Freyjas Bohrmaschine', 3, 3);
+(1, 'Was trägt man eher unfreiwillig?', 'Halskette', 'Armreif', 'Augenringe', 'Piercing', 'a3', 1),
+(2, 'Wer war Kurfürst von Sachsen und König von Polen?', 'November der Große', 'Februar der Fromme', 'Juni der Schöne', 'August der Starke', 'August der Starke', 3),
+(3, 'In welcher Einheit gibt man die Größe von Bildschirmen oder Disketten an?', 'Zoll', 'Polizei', 'Rettung', 'Feuerwehr', 'Zoll', 1),
+(4, 'Wie heißt eine Kulturart des Lauchs?', 'Brigidde', 'Schalotte', 'Schantall', 'Dschenniffa', 'Schalotte', 3),
+(5, 'Gegen das Zu-Wasser-Lassen einer Ente wehrt sich in einem Loriot-Sketch Herr ...?', 'Maier-Leverkuhsen', 'Müller-Lüdenscheidt', 'Weber-Magdeburch', 'Schröder-Düsseldoof', 'Müller-Lüdenscheidt', 2),
+(6, 'Kommt in Filmen ein Defibrillator zum Einsatz, heißt es oft: ??\r\n', 'Ab ins Bett!', 'Füße vom Stuhl!', 'Vor die Tür!', 'Weg vom Tisch!', 'Weg vom Tisch!', 2),
+(7, 'Wer oder was ist im Jahre 79 n.Chr. ausgebrochen?', 'Schweinegrippe', 'Pablo Escobar', 'Vesuv', 'Vogelgrippe', 'Vesuv', 2),
+(8, 'ine von Sehnsucht und Melancholie geprägte portugiesische Musikrichtung ist der ...?', 'Monotono', 'Tristo', 'Fado', 'Ödo', 'Fado', 2),
+(9, 'Auf dem Weg zwischen welchen Metropolen muss man zwangsläufig ein Meer überqueren?', 'Moskau - New York', 'Madrid - Oslo', 'Peking - Kapstadt', 'Montevideo - Montreal', 'Moskau - New York', 2),
+(10, 'Glaubt man der Wortherkunft, so teilte man mit seinen \"Kumpanen\" ursprünglich ...?', 'das Brot', 'den Beruf', 'die Beute', 'die Geliebte', 'das Brot', 1),
+(11, 'Charles de Gaulle wird mit dem Satz zitiert: \"Es ist schwer, ein Volk zu regieren, das ...\"?', 'einen König will', 'von Obelix abstammt', '246 Sorten Käse hat', 'von Asterix abstammt', '246 Sorten Käse hat', 1),
+(12, 'Was ist die Kleine Rheinländerin?\r\n', 'inaktiver Vulkan', 'beliebte Erbsensorte', 'lieblicher Rotwein', 'Walzer von Strauß', 'beliebte Erbsensorte', 3),
+(13, 'Wer war einer der Helden von Bern?', 'Heinrich Heyne', 'Karl Mai', 'Bert Brächt', 'Günter Graß', 'Karl Mai', 3),
+(14, 'Wer steht auf der \"Roten Liste\" gefährdeter Tiere Deutschlands?', 'Hausschaf', 'Hausratte', 'Haushund', 'Hauskatze', 'Hausratte', 1),
+(15, 'Nicht nur Literaturfreunde lieben es, in der Silvesternacht zu ...?', 'grassern', 'böllern', 'jagen', 'springen', 'böllern', 1),
+(16, 'Was heute ganz schick \"Cocooning\" genannt wird, war schon immer die Lieblingsbeschäftigung der ...?', 'Stubenhocker', 'Wandervögel', 'Sportskanonen', 'Discomäuschen', 'Stubenhocker', 3),
+(17, 'Was vereinte im Sommer die Massen vor der Großbildleinwand?', 'J.R. Viewing', 'Miss Ellie Viewing', 'Bobby Viewing', 'Public Viewing', 'Public Viewing', 1),
+(18, 'Was ist als Anrede für eines der begehrtesten Models der Welt vollkommen angemessen?', 'Tachalte', 'Eytante', 'Himutti', 'Naomi', 'Naomi', 1),
+(19, 'Welcher \"Fisch\" wurde erst 1985 in London \"entdeckt\"?', 'Müller-Forelle', 'Schulze-Scholle', 'Becker-Hecht', 'Maier-Barsch', 'Becker-Hecht', 2),
+(20, 'Den Discohit \"Follow Me\" sang mit tiefer Stimme Amanda ??', 'Hamlet', 'Othello', 'Lear', 'Macbeth', 'Lear', 2),
+(21, 'In der Fußballbundesliga kann es durchaus vorkommen, dass ...?', 'Erna Westfalen haut', 'Frieda Hessen prügelt', 'Rita Friesen versohlt', 'Hertha Bayern schlägt', 'Hertha Bayern schlägt', 2),
+(22, 'Was haben die Comicfiguren Homer Simpson, Micky Maus und Fred Feuerstein gemeinsam?', 'kein Haupthaar', 'unverheiratet', 'Sprachfehler', 'vier Finger pro Hand', 'vier Finger pro Hand', 1),
+(23, 'Wer war der erste SPD-Vorsitzende nach dem Zweiten Weltkrieg?', 'Schumacher', 'Frentzen', 'Heidfeld', 'Rosberg', 'Schumacher', 2),
+(24, 'Was sind aufschauender Hund, halbe Heuschrecke, sitzender Held und schlafende Schildkröte?', 'Sternbilder', 'Yoga-Übungen', 'Dachziegel', 'Indianer bei Karl May', 'Yoga-Übungen', 1),
+(25, 'Welches berühmte New Yorker Bauwerk schuf der Architekt Frank Lloyd Wright?', 'Guggenheim Museum', 'Freiheitsstatue', 'Empire State Building', 'Brooklyn Bridge', 'Guggenheim Museum', 3),
+(26, 'Welche berühmte Figur heißt mit Vornamen John?', 'Dr. Kimble', 'Dr. Dolittle', 'Dr. Jekyll', 'Dr. Jekyll', 'Dr. Dolittle', 3),
+(27, 'Wo findet man Isohypsen?', 'Powerdrinks', 'Integralgleichungen', 'Landkarten', 'Turnhallen', 'Landkarten', 2),
+(28, 'Wofür steht das \"Sint\" in Sintflut?', 'Strafe', 'immerwährend', 'siebente', 'Gott', 'immerwährend', 3),
+(29, 'Die aus Ostasien stammende Staude Zingiber officinalis ist hierzulande bekannt als ...?', 'Zitrone', 'Ingwer', 'Melone', 'Orange', 'Ingwer', 3),
+(30, 'Was spielt eine gewichtige Rolle in der nordischen Mythologie?', 'Odins Inbusschlüssel', 'Lokis Zollstock', 'Thors Hammer', 'Freyjas Bohrmaschine', 'Thors Hammer', 3);
 
 -- --------------------------------------------------------
 
@@ -127,7 +136,23 @@ CREATE TABLE `tscoreboard` (
   `PID` int(11) NOT NULL,
   `time` time DEFAULT NULL,
   `price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `tscoreboard`
+--
+
+INSERT INTO `tscoreboard` (`PID`, `time`, `price`) VALUES
+(1, '00:08:20', 500),
+(2, '01:03:20', 32000),
+(3, '04:02:00', 128000),
+(4, '00:30:20', 64000),
+(5, '00:24:03', 8000),
+(6, '00:21:00', 9000),
+(7, '00:31:00', 128000),
+(8, '01:32:11', 32000),
+(9, '02:32:10', 64000),
+(10, '00:00:45', 0);
 
 --
 -- Indizes der exportierten Tabellen
@@ -184,7 +209,7 @@ ALTER TABLE `tquestions`
 -- AUTO_INCREMENT für Tabelle `tscoreboard`
 --
 ALTER TABLE `tscoreboard`
-  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints der exportierten Tabellen

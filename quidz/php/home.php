@@ -12,9 +12,7 @@
 </header>
 <body>
 
-<form action="" method="post">
-    <button type="submit" id="logout" name="abmelden" class="btn btn-primary">Logout</button>
-</form>
+
 <?php
 session_start();
 // Seite?
