@@ -4,7 +4,7 @@
  */
 class HomeLoginController extends Controller
 {
-	protected $viewFileName = "homelogin"; //this will be the View that gets the data...
+	protected $viewFileName = "index"; //this will be the View that gets the data...
 	protected $loginRequired = true;
 
 
@@ -13,10 +13,9 @@ class HomeLoginController extends Controller
 		//wurde ein Formular abgeschickt?
         //welche Daten soll ich aus der Datenbank holen?
         //soll ich irgendwas speichern?
-        $this->view->scoreboard = ScoreboardModel::getScores();
 
 
-
+        /*
         //todo: das ganze in den richtigen controller schieben
         if(isset($_POST['action']) == 'answer') {
             $fid = $_POST['fid'];
@@ -36,6 +35,7 @@ class HomeLoginController extends Controller
                 $answer = 'a1';
             }
         }
+        */
 	}
 
 }

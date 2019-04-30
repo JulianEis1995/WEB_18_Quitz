@@ -13,7 +13,8 @@ class IndexController extends Controller
 	{
 		$this->view->title = "Übersicht";
 		$this->view->username = $this->user->username;
-
+        // Scoreboard aus Model Scoreboard holen
+		$this->view->scoreboard = ScoreboardModel::getScores();
 	}
 
 }

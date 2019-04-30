@@ -21,51 +21,107 @@ class QuestionModel
 	{
 		$db = new Database();
 
-		$sql = "SELECT * FROM address WHERE userId=".intval($userId);
+		$sql = "SELECT * FROM tquestions WHERE sid=".intval($sid);
 		$result = $db->query($sql);
 
 		if($db->numRows($result) > 0)
 		{
-			$addressesArray = array();
+            $alreadyAnsweredQuestions = array();
 
 			while($row = $db->fetchObject($result))
 			{
-				$addressesArray[] = $row;
+                $alreadyAnsweredQuestions[] = $row;
 			}
 
-			return $addressesArray;
+			return $alreadyAnsweredQuestions;
 		}
 
 		return null;
 	}
 
-	public static function createNewAddress($data)
-	{
-		$db = new Database();
+	public static function getQuestions()
+    {
+        //Antwort möglichkeiten
+        $db = new Database();
 
-		$sql = "INSERT INTO address(userId,firstname,lastname,street,zip,city) VALUES('".$db->escapeString($data['userId'])."','".$db->escapeString($data['firstname'])."','".$db->escapeString($data['lastname'])."','".$db->escapeString($data['street'])."','".$db->escapeString($data['zip'])."','".$db->escapeString($data['city'])."')";
-		$db->query($sql);
+        //spielstart
+        if (isset($_SESSION['gameStatus']) && $_SESSION['gameStatus'] == 'gameOver' || !isset($_SESSION['gameStatus'])) {
+            $_SESSION['gameStatus'] = 'running';
+            $_SESSION['questionsAsked'] = array();
+        }
+        //Schwierigkeit für seite
+        if ($_SESSION['gameStatus'] == 'running') {
+            $sid = $_GET['sid'];
+        }
+        //check connection
+        if (!$db) {
+            echo 'connection Failed' . mysqli_connect_errno();
+        }
+        //Frage herausziehen
+        $questionsAskedString = implode(',', $_SESSION['questionsAsked']);
+        $optionalExclude = '';
+        if ($questionsAskedString != '') {
+            $optionalExclude = 'AND FID NOT IN (' . $questionsAskedString . ')';
+        }
+        $sql = "SELECT * FROM tquestions WHERE SID=" . intval($sid) . ' ' . $optionalExclude . ' LIMIT 1';
+        $fragenresult = $db->query($sql);
 
-		$data['id'] = $db->insertId();
+        if ($fragenresult == false) {
+            return null;
+        } else {
+            return $fragenObject = $fragenresult->fetch_object();
+        }
+    }
 
-		return (object) $data;
-	}
+//richtige Antwort auswählen
 
-	public static function saveAddress($data)
-	{
-		$db = new Database();
+        public static function getAnswer($fragenObject)
+    {
+        $db=  new Database();
+        if ($_SESSION['gameStatus'] == 'running') {
+            $sid = $_GET['sid'];
+        }
+        $optionalExclude = '';
+        $questionsAskedString = implode(',', $_SESSION['questionsAsked']);
+        if ($questionsAskedString != '') {
+            $optionalExclude = 'AND FID NOT IN (' . $questionsAskedString . ')';
+        }
 
-		$sql = "UPDATE address SET firstname='".$db->escapeString($data['firstname'])."',lastname='".$db->escapeString($data['lastname'])."',street='".$db->escapeString($data['street'])."',zip='".$db->escapeString($data['zip'])."',city='".$db->escapeString($data['city'])."' WHERE id=".intval($data['id']);
-		$db->query($sql);
+        $sql = "SELECT * FROM tquestions WHERE SID=" . intval($sid) . ' ' . $optionalExclude . ' LIMIT 1';
+        $fragenresult = $db->query($sql);
+        if (isset($_POST['action']) == 'answer') {
 
-		return (object) $data;
-	}
+            $rant = '';
+            if (isset($_POST['a3'])) {
+                if ($fragenObject->ra == $fragenObject->a3) {
+                    echo 'ak';
+                } else {
 
-	public static function deleteAddress($id)
-	{
-		$db = new Database();
+                }
+            }
+            if (isset($_POST['a2'])) {
+                if ($fragenObject->ra == $fragenObject->a2) {
 
-		$sql = "DELETE FROM address WHERE id=".intval($id);
-		$db->query($sql);
-	}
+                } else {
+
+                }
+            }
+            if (isset($_POST['a4'])) {
+                if ($fragenObject->ra == $fragenObject->a4) {
+
+
+                } else {
+
+                }
+            }
+            if (isset($_POST['a1'])) {
+                if ($fragenObject->ra == $fragenObject->a1) {
+                } else {
+
+                }
+            }
+        } return $fragenObject;
+    }
+
+
 }

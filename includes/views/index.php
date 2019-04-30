@@ -1,8 +1,9 @@
+<!-- Header -->
     <?php
     echo $this->header;
     ?>
-<!-- Buttons -->
 
+<!-- Buttons -->
 <div class="row">
     <div class="col-sm-6">
         <div class="card">
@@ -100,33 +101,29 @@
                 <table class='table table-hover'>
                     <thead>
                     <tr>
-                        <th scope='col'>#</th>
                         <th scope='col'>Username</th>
                         <th scope='col'>Vorname</th>
                         <th scope='col'>Nachname</th>
                         <th scope='col'>Mail</th>
                         <th scope='col'>Preis</th>
                         <th scope='col'>Zeit</th>
-                        </tr>";
-                    </thead>";
-
-                <?php
-                $nr = 0;
-                foreach($this->scoreboard as $scoreboardObj):
-                ?>
-                <tr>
-                    <td><?php echo $nr; ?></td>
-                    <td><?php echo $scoreboardObj->username; ?></td>
-                    <td><?php echo $scoreboardObj->vname; ?></td>
-                    <td><?php echo $scoreboardObj->nname; ?></td>
-                    <td><?php echo $scoreboardObj->mail; ?></td>
-                    <td><?php echo $scoreboardObj->price; ?></td>
-                    <td><?php echo $scoreboardObj->time; ?></td>
-                </tr>
-                <?php
-                $nr++;
-                endforeach;
-                ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach($this->scoreboard as $scoreboardObj):
+                    ?>
+                    <tr>
+                        <td><?php echo $scoreboardObj->username; ?></td>
+                        <td><?php echo $scoreboardObj->vname; ?></td>
+                        <td><?php echo $scoreboardObj->nname; ?></td>
+                        <td><?php echo $scoreboardObj->mail; ?></td>
+                        <td><?php echo $scoreboardObj->price; ?></td>
+                        <td><?php echo $scoreboardObj->time; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -158,6 +155,8 @@
         </div>
     </div>
 </div>
+
+<!-- Footer -->
     <?php
 
     echo $this->footer;

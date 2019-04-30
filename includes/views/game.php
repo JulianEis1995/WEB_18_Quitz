@@ -1,38 +1,11 @@
-<<<<<<< HEAD
-=======
 <?php
+// Verbindung
+session_start();
 
-//check connection
-if(mysqli_connect_errno()){
-    echo 'connection Failed' . mysqli_connect_errno();
-}
-
-//create Querry
-$query1='SELECT * FROM tquestions WHERE SID==1';
-$query2='SELECT * FROM tquestions WHERE SID==2';
-$query3='SELECT * FROM tquestions WHERE SID==3';
-
-//get result
-$result1=mysqli_query($db, $query1);
-$result2=mysqli_query($db, $query2);
-$result3=mysqli_query($db, $query3);
-
-// fetch Data
-$fragen1=mysqli_fetch_all($result1, MYSQLI_ASSOC);
-$fragen2=mysqli_fetch_all($result2, MYSQLI_ASSOC);
-$fragen3=mysqli_fetch_all($result3, MYSQLI_ASSOC);
-
-//Free result
-mysqli_free_result($result1);
-mysqli_free_result($result2);
-mysqli_free_result($result3);
-
-//close
-mysqli_close($db);
 
 ?>
 
->>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,29 +17,21 @@ mysqli_close($db);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Spielfeld</title>
-    <link rel="stylesheet" href="../../../WEB_18_Quitz/quidz/stylesheets/spielfeld.css">
+    <link rel="stylesheet" href="../stylesheets/spielfeld.css">
 </head>
 <body>
-<<<<<<< HEAD
-=======
-<?php foreach($fragen1 as $post1): foreach ($fragen2 as $post2): foreach ($fragen3 as $post3):        ?>
->>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
+
+
+
 <div class="Pause">
     <button type="button" class="btn btn-dark">Pause</button>
 </div>
 <div class="Frage">
-<<<<<<< HEAD
-    <p>Frage .</p>
-=======
-    <p><?php if(SID==1){
-        echo $post1['question'];}
-        else if(SID==2){
-            echo $post2['question'];
-            }
-        else
-        {echo $post3['question'];}
-                ?></p>
->>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
+
+    <p><?php foreach($this->scoreboard as $scoreboardObj): ?></p>
+
+
+
 </div>
 
 <div class="Liste">
@@ -89,22 +54,23 @@ mysqli_close($db);
     </ul>
 </div>
 
-<div class="Antwort1">
-    <button type="button" class="btn btn-primary" class="Antwort1">Antwort 1</button>
+<form method="post">
 
-    <button type="button" class="btn btn-primary" class="Antwort2">Antwort 2</button>
-</div>
-<div class="Antwort3">
-    <button type="button" class="btn btn-primary" class="Antwort3">Antwort 3</button>
+    <div class="Antwort1">
+        <button type="submit" class="btn btn-primary" class="Antwort1" name="a1"><?php echo $fragenObject->a1; ?></button>
 
-    <button type="button" class="btn btn-primary" class="Antwort4">Antwort 4</button>
-</div>
-<<<<<<< HEAD
-=======
-<?php endforeach; ?>
-<?php endforeach; ?>
-<?php endforeach; ?>
->>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
+        <button type="submit" class="btn btn-primary" class="Antwort2"  name="a2"><?php echo $fragenObject->a2; ?></button>
+    </div>
+    <div class="Antwort3">
+        <button type="submit" class="btn btn-primary" class="Antwort3"  name="a3"><?php echo $fragenObject->a3; ?></button>
+
+        <button type="submit" class="btn btn-primary" class="Antwort4"  name="a4"><?php echo $fragenObject->a4; ?></button>
+    </div>
+    <input type="hidden" name="fid" value="<?php echo $fragenObject->FID; ?>">
+    <input type="hidden" name="action" value="answer">
+</form>
+
+
 
 
 
@@ -114,8 +80,4 @@ mysqli_close($db);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 2dc232ef7dc5a738f91946da00fd4ddff5c565a3
