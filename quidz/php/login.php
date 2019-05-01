@@ -11,7 +11,6 @@
 
     <title>WWM</title>
     <script>
-        document.getElementById('musik').play();
         function validatePassword(password) {
 
             // Do not show anything when the length of password is zero.

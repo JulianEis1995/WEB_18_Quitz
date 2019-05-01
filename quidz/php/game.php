@@ -72,37 +72,45 @@ if(isset($_POST['action']) == 'answer') {
     if(isset($_POST['a3'])) {
         if ($fragenObject->ra == $fragenObject->a3)
         {
-            echo 'ak';
+            echo 'richtig';
         }
         else{
+            echo 'falsch';
 
         }
     }
     if(isset($_POST['a2'])) {
         if ($fragenObject->ra == $fragenObject->a2)
         {
-
+            echo 'richtig';
         }
         else{
+            echo 'falsch';
 
         }
     }
     if(isset($_POST['a4'])) {
         if ($fragenObject->ra == $fragenObject->a4)
         {
+            echo 'richtig';
 
 
         }
         else
         {
+            echo 'falsch';
 
         }
     }
     if(isset($_POST['a1'])) {
         if ($fragenObject->ra == $fragenObject->a1)
         {
+            echo 'richtig';
+
         }
         else{
+            echo 'falsch';
+
 
         }
     }
@@ -111,8 +119,23 @@ if(isset($_POST['action']) == 'answer') {
 
     $alreadyAnsweredQuestions[] = $_POST['fid'];
 
-    $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
+   $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
 }
+
+/*if(isset($_POST['los']) == 'jok') {
+    if(isset($_POST['j1'])) {
+        echo 'amk';
+
+    }
+    if(isset($_POST['j2'])) {
+        echo 'amkasdf';
+    }
+    if(isset($_POST['j3'])) {
+        echo 'amasdk';
+    }
+}
+*/
+
 
 
 
@@ -132,6 +155,12 @@ $db->close();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Spielfeld</title>
+    <script>
+
+
+
+
+    </script>
     <link rel="stylesheet" href="../stylesheets/spielfeld.css">
 </head>
 <body>
@@ -148,7 +177,23 @@ $db->close();
 
 
 </div>
+<form method="post">
+<div>
+    <button type="submit" class="btn btn-primary" class="Joker1" name="j1">50/50</button>
 
+</div>
+
+<div>
+    <button type="submit" class="btn btn-primary" class="Joker2" name="j2">50/50</button>
+
+</div>
+
+<div>
+    <button type="submit" class="btn btn-primary" class="Joker3" name="j3">50/50</button>
+
+</div>
+<input type="hidden" name="los" value="jok">
+</form>
 <div class="Liste">
     <ul class="list-group">
         <li class="list-group-item">1.000.000</li>
@@ -172,7 +217,7 @@ $db->close();
 <form method="post">
 
     <div class="Antwort1">
-        <button type="submit" class="btn btn-primary" class="Antwort1" name="a1"><?php echo $fragenObject->a1; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort1" id="a1" name="a1"><?php echo $fragenObject->a1; ?></button>
 
         <button type="submit" class="btn btn-primary" class="Antwort2"  name="a2"><?php echo $fragenObject->a2; ?></button>
     </div>
