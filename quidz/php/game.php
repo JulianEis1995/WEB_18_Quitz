@@ -1,6 +1,8 @@
 <?php
-// Verbindung
+// Verbindung, Session starten
 session_start();
+
+
 //Antwort möglichkeiten
 //var_dump($_POST);
 /*if(isset($_POST['action']) == 'answer') {
@@ -23,31 +25,31 @@ session_start();
 //spielstart
 if(isset($_SESSION['gameStatus']) && $_SESSION['gameStatus'] == 'gameOver' || !isset($_SESSION['gameStatus'])) {
     $_SESSION['gameStatus'] = 'running';
-    $_SESSION['questionsAsked'] = array();
+    $_SESSION['questionsAsked'] = array();//füllt aray mit bereits gestellten fragen
 }
-//Schwierigkeit für seite
+//Schwierigkeit bekommen
 if($_SESSION['gameStatus'] == 'running') {
     $sid = $_GET['sid'];
 }
-//frage besorgen
-$db= new mysqli('localhost', 'root', '', 'quitz');
+
+$db= new mysqli('localhost', 'root', '', 'quitz'); //verbindung zur datenbank
 //check connection
 if(!$db){
     echo 'connection Failed' . mysqli_connect_errno();
 }
 //Frage herausziehen
-$questionsAskedString = implode(',', unserialize($_SESSION['questionsAsked']));
+$questionsAskedString = implode(',', unserialize($_SESSION['questionsAsked']));// Fragen die bereits gestellt wurden
 $optionalExclude = '';
-if($questionsAskedString != '') {
+if($questionsAskedString != '') { //es wird eine frage gesucht die noch nicht im Fragenarray drin ist, also noch nicht verwendet wird
     $optionalExclude = 'AND FID NOT IN ('.$questionsAskedString.')';
 }
-$sql="SELECT * FROM tquestions WHERE SID=".intval($sid).' '.$optionalExclude.' LIMIT 1';
-$fragenresult = $db->query($sql);
+$sql="SELECT * FROM tquestions WHERE SID=".intval($sid).' '.$optionalExclude.' LIMIT 1'; //holt aus der datenbank mit bedingung einer bestimmten SID genau eine Frage aus der Datenbank
+$fragenresult = $db->query($sql); // Frage wird als Result gespeichert
 if($fragenresult == false) {
-    echo $db->error;
+    echo $db->error;// wenn keien frage enthalten ist gibt es einen error
 }
 else{
-    $fragenObject = $fragenresult->fetch_object();
+    $fragenObject = $fragenresult->fetch_object(); // ansonsten wir das object gefetscht und hat einen gespeicherten rückgabewert
 }
 
 //pruefen $fragenObject == null?
@@ -115,7 +117,7 @@ if(isset($_POST['action']) == 'answer') {
         }
     }
 
-    $alreadyAnsweredQuestions = unserialize($_SESSION['questionsAsked']);
+    $alreadyAnsweredQuestions = unserialize($_SESSION['questionsAsked']);  // diese methode dient dazu das sich das array wenn alle fragen gestellt wurden leert
 
     $alreadyAnsweredQuestions[] = $_POST['fid'];
 
@@ -167,16 +169,42 @@ $db->close();
 
 
 
-<div class="Pause">
-    <button type="button" class="btn btn-dark">Pause</button>
+<button type="button" class="Pause"  data-toggle="modal" data-target="#ModalOptionen">Optionen</button> <!-- Pauseknopf mit möglichkeite auf spielfortsetzen oder spiel schließen-->
+
+
+<div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalOptionenTitle">Optionen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel fortsetzen</button>
+                <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel beenden</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <div class="Frage">
 
-    <p><?php echo $fragenObject->question; ?></p>
+    <p><?php echo $fragenObject->question; //ausgabe der Frage?></p>
 
 
 
 </div>
+
+<div class="progress"> <!-- progress leiste ist auf 30 sekunden getrimmt, das man weiss wie viel zeit noch vorhanden ist-->
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
 <form method="post">
 <div>
     <button type="submit" class="btn btn-primary" class="Joker1" name="j1">50/50</button>
@@ -194,7 +222,7 @@ $db->close();
 </div>
 <input type="hidden" name="los" value="jok">
 </form>
-<div class="Liste">
+<div class="Liste"><!-- Liste zeigt aktuelle gewinnsumme-->
     <ul class="list-group">
         <li class="list-group-item">1.000.000</li>
         <li class="list-group-item">500.000</li>
@@ -214,10 +242,10 @@ $db->close();
     </ul>
 </div>
 
-<form method="post">
+<form method="post"> <!--Formular wird für ausgabe der 4 antworten benötigt, da man die inputs braucht um die FID zuzuweisen und die fragen in action speichern-->
 
     <div class="Antwort1">
-        <button type="submit" class="btn btn-primary" class="Antwort1" id="a1" name="a1"><?php echo $fragenObject->a1; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort1" id="a1" name="a1"><?php echo $fragenObject->a1; ?></button> <!-- submit knöpfe damit man antwort auswählöen kann-->
 
         <button type="submit" class="btn btn-primary" class="Antwort2"  name="a2"><?php echo $fragenObject->a2; ?></button>
     </div>
