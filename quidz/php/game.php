@@ -58,6 +58,11 @@ if($fragenObject == null)
     //speichern score in der Datenbank
     //Redirect auf eine andere SEite?
 }
+//ende
+if ($fragenresult== null){
+    header('Location: homelogin.php');
+}
+
 //$fragenresult == null?
 //var_dump($fragenresult);
 //close
