@@ -80,7 +80,31 @@ if(isset($_POST['action']) == 'answer') {
             echo 'richtig';
         }
         else{
-            echo 'falsch';
+            echo '<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#endGame">
+    Spiel beendet
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="endGame" tabindex="-1" role="dialog" aria-labelledby="EndGame" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Spiel beendet!</h5>
+            </div>
+            <div class="modal-body">
+                Das Spiel ist beendet. Gratuliere!
+                <hr>
+                <form method="get" action="includes/views/index.php">
+                    <button type="submit" class="btn btn-option btn-outline-primary btn-large btn-block">Ende</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+';
 
         }
     }
@@ -90,7 +114,31 @@ if(isset($_POST['action']) == 'answer') {
             echo 'richtig';
         }
         else{
-            echo 'falsch';
+            echo '<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#endGame">
+    Spiel Beendet
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="endGame" tabindex="-1" role="dialog" aria-labelledby="EndGame" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Spiel beendet!</h5>
+            </div>
+            <div class="modal-body">
+                Das Spiel ist beendet. Gratuliere!
+                <hr>
+                <form method="get" action="includes/views/index.php">
+                    <button type="submit" class="btn btn-option btn-outline-primary btn-large btn-block">Ende</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+';
 
         }
     }
@@ -103,7 +151,32 @@ if(isset($_POST['action']) == 'answer') {
         }
         else
         {
-            echo 'falsch';
+            echo'
+<!-- Button trigger modal -->
+<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#endGame\">
+    Spiel Beendet
+</button>
+
+<!-- Modal -->
+<div class=\"modal fade\" id=\"endGame\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"EndGame\" aria-hidden=\"true\">
+    <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Spiel beendet!</h5>
+            </div>
+            <div class=\"modal-body\">
+                Das Spiel ist beendet. Gratuliere!
+                <hr>
+                <form method=\"get\" action=\"includes/views/index.php\">
+                    <button type=\"submit\" class=\"btn btn-option btn-outline-primary btn-large btn-block\">Ende</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+';
 
         }
     }
@@ -114,9 +187,32 @@ if(isset($_POST['action']) == 'answer') {
 
         }
         else{
-            echo 'falsch';
+            echo '
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#endGame">
+    Spiel Beendet
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="endGame" tabindex="-1" role="dialog" aria-labelledby="EndGame" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Spiel beendet!</h5>
+            </div>
+            <div class="modal-body">
+                Das Spiel ist beendet. Gratuliere!
+                <hr>
+                <form method="get" action="includes/views/index.php">
+                    <button type="submit" class="btn btn-option btn-outline-primary btn-large btn-block">Ende</button>
+                </form>
+            </div>
 
 
+        </div>
+    </div>
+</div>
+';
         }
     }
 
@@ -230,20 +326,15 @@ $db->close();
 <div class="Liste">
     <ul class="list-group">
         <li class="list-group-item">1.000.000</li>
-        <li class="list-group-item">500.000</li>
-        <li class="list-group-item">125.000</li>
+        <li class="list-group-item">128.000</li>
         <li class="list-group-item">64.000</li>
         <li class="list-group-item">32.000</li>
         <li class="list-group-item">16.000</li>
+        <li class="list-group-item">9.000</li>
         <li class="list-group-item">8.000</li>
         <li class="list-group-item">4.000</li>
-        <li class="list-group-item">2.000</li>
         <li class="list-group-item">1.000</li>
         <li class="list-group-item">500</li>
-        <li class="list-group-item">300</li>
-        <li class="list-group-item">200</li>
-        <li class="list-group-item">100</li>
-        <li class="list-group-item">50</li>
     </ul>
 </div>
 
