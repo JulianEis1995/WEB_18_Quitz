@@ -73,7 +73,7 @@ if(isset($_POST['action']) == 'answer') {
             <div class="modal-body">
                 Das Spiel ist beendet. Gratuliere!
                 <hr>
-                <form method="get" action="includes/views/index.php">
+                <form method="get" action="../index.php">
                     <button type="submit" class="btn btn-option btn-outline-primary btn-large btn-block">Ende</button>
                 </form>
             </div>

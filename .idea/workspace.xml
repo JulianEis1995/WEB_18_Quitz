@@ -2,69 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aa0827a-04d4-430b-a226-2d5720084bf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/php/game.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projektarbeit.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/homelogin2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/80c5d23c201268687887779fc2152c480b53b024/_reset.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/ad1ed1c9cd021cc94eba4cfa27f571f3baeb0966/ie.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/ad1ed1c9cd021cc94eba4cfa27f571f3baeb0966/print.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/ad1ed1c9cd021cc94eba4cfa27f571f3baeb0966/screen.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/dba1f2d2234369077730491b81d674e0977dd149/_utilities.scssc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/#Dokumentation/Abfragen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/#Dokumentation/Projektarbeit_WWM_Präsentation.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/config.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/db/quidz.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/Login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/game.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/game.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/html/homelogin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/logo/anleitung.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/logo/bestenliste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/logo/optionen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/logo/quidz.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/logo/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/php/game.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/php/home.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/php/homelogin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/php/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/sass/ie.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/sass/print.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/sass/screen.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/ie.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/screen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/spielfeld.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quidz/stylesheets/stylelogin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/game.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/game.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/parts/footer.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,17 +36,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/homelogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="223" selection-start-line="223" selection-end-line="225" selection-end-column="2" />
+            <state relative-caret-position="161">
+              <caret line="51" selection-start-line="51" selection-end-line="51" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/homelogin2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="214" selection-start-line="214" selection-end-line="214" />
+            <state relative-caret-position="288">
+              <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -128,7 +87,9 @@
         <option value="$PROJECT_DIR$/php/parts/footer.php" />
         <option value="$PROJECT_DIR$/php/parts/header.php" />
         <option value="$PROJECT_DIR$/php/homelogin.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/php/game.php" />
+        <option value="$PROJECT_DIR$/php/homelogin2.php" />
       </list>
     </option>
   </component>
@@ -142,7 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,16 +152,20 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/php" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Studium\Programme\XAMPP\htdocs\WEB_18_Quitz\php" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Studium\Programme\XAMPP\htdocs\WEB_18_Quitz\php" />
     </key>
@@ -228,25 +192,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556818599009</updated>
-      <workItem from="1556818600285" duration="4821000" />
+      <workItem from="1556818600285" duration="5293000" />
+      <workItem from="1556831821346" duration="1986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4821000" />
+    <option name="totallyTimeSpent" value="7279000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1618" height="885" extended-state="6" />
+    <frame x="795" y="0" width="815" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1931964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08609272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -254,10 +214,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3328859" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,9 +232,7 @@
     <entry file="file://$PROJECT_DIR$/stylesheets/spielfeld.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/home.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/php/home.php" />
     <entry file="file://$PROJECT_DIR$/php/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-208">
@@ -284,17 +247,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/parts/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/homelogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="223" selection-start-line="223" selection-end-line="225" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -307,8 +270,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="214" selection-start-line="214" selection-end-line="214" />
+        <state relative-caret-position="288">
+          <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/homelogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="51" selection-start-line="51" selection-end-line="51" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/homelogin2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
