@@ -2,34 +2,68 @@ body{
     margin: auto;
 }
 
-
-
-
 .Antwort1{
     position:absolute;
-   margin-left: 40%;
-    margin-top: 15%;
+    margin-left: 40%;
+    margin-top: 23%;
+
 
 }
 
 .Antwort3{
     position:absolute;
     margin-left: 40%;
-    margin-top: 18%;
+    margin-top: 26%;
 
 }
 
 .Frage{
     position:absolute;
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 40%;
     width: 425px;
 }
 
 .Liste {
     position:absolute;
-    margin-left: 90%;
+    margin-left: 93%;
     margin-top:0px;
     width:10%;
-    height: 5%;
+    height: 10px;
+    transform: scale(0.75);
 }
+
+.Pause  {
+    position: absolute;
+    margin-left: 0%;
+    margin-top:0%;
+    width: 100px;
+
+}
+
+.progress {
+    position: absolute;
+    margin-top: 55%;
+    margin-left: 34%;
+    width: 450px;
+
+}
+
+.progress-bar {
+    position:absolute;
+    width:450px;
+    animation-duration: 30s;
+    animation-name:Progress;
+    transition: linear;
+
+}
+
+@keyframes Progress {
+    0% {background-color:green; transform:scale(0.0) }
+    25% {background-color:lawngreen; transform:scale(0.25) }
+    50% {background-color:lawngreen; transform:scale(0.5) }
+    75% {background-color:orangered; transform:scale(0.75) }
+    100% {background-color:red; transform:scale(1.0) }
+}
+
+

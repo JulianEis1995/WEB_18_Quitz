@@ -156,44 +156,76 @@ $db->close();
 
     <title>Spielfeld</title>
     <script>
+        function toggle_div_fun(id) {
 
 
-
+        var divelement=document.getElementById(id);
+        divelement.style.display='none';
+        }
 
     </script>
     <link rel="stylesheet" href="../stylesheets/spielfeld.css">
+
 </head>
 <body>
 
 
+<button type="button" class="Pause"  data-toggle="modal" data-target="#ModalOptionen">Optionen</button> <!-- Pauseknopf mit möglichkeite auf spielfortsetzen oder spiel schließen-->
 
-<div class="Pause">
-    <button type="button" class="btn btn-dark">Pause</button>
+
+<div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalOptionenTitle">Optionen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-option btn-outline-primary btn-large btn-block">Spiel beenden</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <div class="Frage">
 
-    <p><?php echo $fragenObject->question; ?></p>
+    <p><?php echo $fragenObject->question; //ausgabe der Frage?></p>
+
+
+
+</div>
 
 
 
 </div>
 <form method="post">
 <div>
-    <button type="submit" class="btn btn-primary" class="Joker1" name="j1">50/50</button>
+    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker1" name="j1">50/50</button>
 
 </div>
 
 <div>
-    <button type="submit" class="btn btn-primary" class="Joker2" name="j2">50/50</button>
+    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker2" name="j2">50/50</button>
 
 </div>
 
 <div>
-    <button type="submit" class="btn btn-primary" class="Joker3" name="j3">50/50</button>
+    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker3" name="j3">50/50</button>
 
 </div>
 <input type="hidden" name="los" value="jok">
 </form>
+
+<div class="progress"> <!-- progress leiste ist auf 30 sekunden getrimmt, das man weiss wie viel zeit noch vorhanden ist-->
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
 <div class="Liste">
     <ul class="list-group">
         <li class="list-group-item">1.000.000</li>
@@ -217,14 +249,14 @@ $db->close();
 <form method="post">
 
     <div class="Antwort1">
-        <button type="submit" class="btn btn-primary" class="Antwort1" id="a1" name="a1"><?php echo $fragenObject->a1; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort1" id="fa" name="a1"><?php echo $fragenObject->a1; ?></button>
 
-        <button type="submit" class="btn btn-primary" class="Antwort2"  name="a2"><?php echo $fragenObject->a2; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort2" id="fa" name="a2"><?php echo $fragenObject->a2; ?></button>
     </div>
     <div class="Antwort3">
-        <button type="submit" class="btn btn-primary" class="Antwort3"  name="a3"><?php echo $fragenObject->a3; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort3" id="fa" name="a3"><?php echo $fragenObject->a3; ?></button>
 
-        <button type="submit" class="btn btn-primary" class="Antwort4"  name="a4"><?php echo $fragenObject->a4; ?></button>
+        <button type="submit" class="btn btn-primary" class="Antwort4" id="fa" name="a4"><?php echo $fragenObject->a4; ?></button>
     </div>
     <input type="hidden" name="fid" value="<?php echo $fragenObject->FID; ?>">
     <input type="hidden" name="action" value="answer">

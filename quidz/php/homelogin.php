@@ -36,6 +36,10 @@ endif;
     header('Location: login.php');
   endif;
 
+if(isset($_POST['spiel'])):
+    header('Location: game.php');
+endif;
+
 
 
 ?>
@@ -49,7 +53,9 @@ endif;
             <div class="card-body">
                 <h5 class="card-title">Play the Game?</h5>
                 <p class="card-text">Willst du ein neues Spiel starten? Dann warte nicht und klick hier!</p>
-                <button type="button" class="btn btn-primary">Spiel Starten</button>
+                <form action="" method="post">
+                    <button type="submit" name="spiel" class="btn btn-primary">Spiel starten</button>
+                </form>
             </div>
         </div>
     </div>
