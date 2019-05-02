@@ -18,11 +18,7 @@
 
 <?php
 
-// Als Daten müssen folgende nacheinander eingetragen werden
-// Host | Meist localhost
-// Benutzer | Benutzername der Datenbank
-// Passwort | Passwort der Datenbank. Wenn keins vorhanden einfach leer lasssen
-// Datenbank | Name der Datenbank
+//datenbankverbindung wird erstellt
 $db = new mysqli('localhost','root','','quitz');
 if($db->connect_error):
   echo $db->connect_error;
@@ -30,7 +26,7 @@ endif;
 
 
 
-
+//falls man den abmelden button drückt kommt man zu login seite zurück
   if(isset($_POST['abmelden'])):
     session_destroy();
     header('Location: login.php');
@@ -38,7 +34,7 @@ endif;
 
 
 
-
+//die einzelnen schwierigskeitstufen
     if(isset($_POST['difficulty'])){
 
         $answer = $_POST['difficulty'];
@@ -46,9 +42,6 @@ endif;
         header('Location: game.php?sid=1');
     }
     }
-
-
-
     if(isset($_POST['difficulty'])){
 
         $answer = $_POST['difficulty'];
@@ -57,9 +50,6 @@ endif;
             header('Location: game.php?sid=2');
         }
     }
-
-
-
 
     if(isset($_POST['difficulty'])){
 
@@ -70,17 +60,6 @@ endif;
     }
 
 
-
-
-  //action ändert difficulty
-  /*if($_POST['action'] == 'changedifficulty') {
-      $sid = $_POST['sid']; //entzieht die sid
-      $_SESSION['difficulty'] = $sid; //speichert sid in sessiondifficulty
-      $json = new JSON(); //gibt per json die änderung ans backend
-      $json->result = true;
-      $json->send();
-  }
-*/
 ?>
 <!-- Buttons -->
 
@@ -252,25 +231,6 @@ else {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="../js/bootstrap.min.js"></script>
 
-<!--<script type="text/javascript"> // javascript zur schwierigkeitsänderung
-    $(document).ready(function() {
-        $('#difficultySettings').find('.form-check-input').bind('click', function() { //beim click wird die meldung gebracht das es geändert wurde. // bind wird benutzt um sich auf mehrere elemente zu fokusieren und nicht nur eins
-            //
-            $.ajax({
-                'method': 'post',  //ajax braucht methode um etwas zu bearbeiten
-                'url': 'homelogin.php' // url wo etwas passieren soll
-                'data': {'sid': $(this).val(), 'action': 'changeDifficulty'}, // was geändert werden soll, die schwierigkeit
-                'success': function(data, xhr) {
-                    //awesome
-                    $('#ModalOptionen').modal('hide'); // um modal zu verstecken
-
-                }
-            });
-            //console.log();
-        });
-    });
-</script>
--->
 </body>
 <footer></footer>
 

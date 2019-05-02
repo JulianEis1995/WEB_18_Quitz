@@ -1,24 +1,7 @@
 <?php
 // Verbindung
 session_start();
-//Antwort möglichkeiten
-//var_dump($_POST);
-/*if(isset($_POST['action']) == 'answer') {
-    $fid = $_POST['fid'];
-    $answer = '';
-    if(isset($_POST['a3'])) {
-        $answer = 'a3';
-    }
-    if(isset($_POST['a2'])) {
-        $answer = 'a2';
-    }
-    if(isset($_POST['a4'])) {
-        $answer = 'a4';
-    }
-    if(isset($_POST['a1'])) {
-        $answer = 'a1';
-    }
-}*/
+
 
 //spielstart
 if(isset($_SESSION['gameStatus']) && $_SESSION['gameStatus'] == 'gameOver' || !isset($_SESSION['gameStatus'])) {
@@ -63,11 +46,6 @@ if ($fragenresult== null){
     header('Location: homelogin.php');
 }
 
-//$fragenresult == null?
-//var_dump($fragenresult);
-//close
-
-//richtige Antwort auswählen
 
 
 
@@ -203,7 +181,7 @@ if(isset($_POST['action']) == 'answer') {
             <div class="modal-body">
                 Das Spiel ist beendet. Gratuliere!
                 <hr>
-                <form method="get" action="includes/views/index.php">
+                <form method="get" action="homelogin.php">
                     <button type="submit" class="btn btn-option btn-outline-primary btn-large btn-block">Ende</button>
                 </form>
             </div>
@@ -223,19 +201,7 @@ if(isset($_POST['action']) == 'answer') {
     $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
 }
 
-/*if(isset($_POST['los']) == 'jok') {
-    if(isset($_POST['j1'])) {
-        echo 'amk';
 
-    }
-    if(isset($_POST['j2'])) {
-        echo 'amkasdf';
-    }
-    if(isset($_POST['j3'])) {
-        echo 'amasdk';
-    }
-}
-*/
 
 
 
@@ -257,6 +223,8 @@ $db->close();
 
     <title>Spielfeld</title>
     <script>
+
+        //funktion für joker button, jedoch funktioniert diese nicht
         function toggle_div_fun(id) {
 
 

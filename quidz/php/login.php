@@ -11,28 +11,29 @@
 
     <title>WWM</title>
     <script>
+        //passwortstärke wird überprüft
         function validatePassword(password) {
 
-            // Do not show anything when the length of password is zero.
+            // Nichts anzeigen, wenn die Länge 0 ist
             if (password.length === 0) {
                 document.getElementById("msg").innerHTML = "";
                 return;
             }
-            // Create an array and push all possible values that you want in password
+            // Erzeugt ein Array mit allmöglichen Kombinationen
             var matchedCase = new Array();
-            matchedCase.push("[$@$!%*#?&]"); // Special Charector
-            matchedCase.push("[A-Z]");      // Uppercase Alpabates
-            matchedCase.push("[0-9]");      // Numbers
-            matchedCase.push("[a-z]");     // Lowercase Alphabates
+            matchedCase.push("[$@$!%*#?&]"); // Sonderzeichen
+            matchedCase.push("[A-Z]");      // Großbuchstaben
+            matchedCase.push("[0-9]");      // Nummern
+            matchedCase.push("[a-z]");     // Kleinbuchstaben
 
-            // Check the conditions
+            // Überprüft die Bedingungen
             var ctr = 0;
             for (var i = 0; i < matchedCase.length; i++) {
                 if (new RegExp(matchedCase[i]).test(password)) {
                     ctr++;
                 }
             }
-            // Display it
+            // Gibt sie aus
             var color = "";
             var strength = "";
             switch (ctr) {
@@ -59,12 +60,14 @@
     <?php
 
     //registrieren
+    //datenbankverbindung herstellen
     $db = new mysqli('localhost','root','','quitz');
     if($db->connect_error):
         echo $db->connect_error;
     endif;
-    if(isset($_POST['absenden2'])):
+    if(isset($_POST['absenden2'])):// wenn man absenden knopf drückt, soll das folgenden passieren:
 
+        //Variablen für die jeweiligen spalten der datenbank erzeugen
         $benutzername2 = $_POST['benutzername2'];
         $vorname2 = $_POST['vorname2'];
         $nachname2 = $_POST['nachname2'];
@@ -72,12 +75,13 @@
         $passwort2 = $_POST['passwort2'];
         $passwort2_widerholen = $_POST['passwort2_wiederholen'];
 
+        //holt Email aus der datenbank
         $search_mail = $db->prepare("SELECT PID FROM tplayer WHERE mail = ?");
         $search_mail->bind_param('s',$email);
         $search_mail->execute();
         $search_mailresult = $search_mail->get_result();
 
-
+        //holt username aus datenbank
         $search_user = $db->prepare("SELECT PID FROM tplayer WHERE username = ?");
         $search_user->bind_param('s',$benutzername2);
         $search_user->execute();
@@ -85,14 +89,19 @@
 
 
 
-
+        //Überprüft, ob Benutzername existiert
         if($search_userresult->num_rows == 0):
+            //Überprüft, ob Email existiert
             if($search_mailresult->num_rows == 0):
 
+                //Überprüft ob alles ausgefüllt ist
                 if ($benutzername2 !== "" && $vorname2 !== "" && $nachname2 !== "" && $email !== "" && $passwort2 !== "" && $passwort2_widerholen !== ""):
 
+                    //Überprüft, ob die Passwörter identisch ist
                     if($passwort2 == $passwort2_widerholen):
+                        //Passwort wird nach md5 verschlüsselt
                         $passwort2 = md5($passwort2);
+                        //die angegebenen daten werden in die datenbank gefüllt
                         $insert = $db->prepare("INSERT INTO tplayer (username,vname, nname, mail, pwd) VALUES (?,?,?,?,?)");
                         $insert->bind_param('sssss',$benutzername2, $vorname2, $nachname2, $email, $passwort2);
                         $insert->execute();
@@ -125,11 +134,14 @@
     endif;
 
     //login
-    if(isset($_POST['absenden'])):
+
+    if(isset($_POST['absenden'])):// wenn man absenden knopf drückt, soll das folgenden passieren:
+        //die eingegebenen daten werden verglichen
         $benutzername = strtolower($_POST['benutzername']);
         $passwort = $_POST['passwort'];
         $passwort = md5($passwort);
 
+        //
         $search_user2 = $db->prepare("SELECT PID FROM tplayer WHERE username = ? AND pwd = ?");
         $search_user2->bind_param('ss',$benutzername,$passwort);
         $search_user2->execute();
@@ -138,7 +150,7 @@
         if($search_result->num_rows == 1):
             $search_object = $search_result->fetch_object();
 
-
+            //falls alles passt wird man zu homelogin weitergelitten
             $_SESSION['user'] = $search_object->PID;
             header('Location: homelogin.php');
         else:
