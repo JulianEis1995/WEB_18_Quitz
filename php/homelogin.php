@@ -1,65 +1,82 @@
 <?php
 include "./parts/header.php";
 ?>
-    </head>
-    <body>
+</head>
+<body>
 
-    <?php
+<?php
 
-//datenbankverbindung wird erstellt
+// Als Daten müssen folgende nacheinander eingetragen werden
+// Host | Meist localhost
+// Benutzer | Benutzername der Datenbank
+// Passwort | Passwort der Datenbank. Wenn keins vorhanden einfach leer lasssen
+// Datenbank | Name der Datenbank
 $db = new mysqli('localhost','root','','quitz');
 if($db->connect_error):
-  echo $db->connect_error;
+    echo $db->connect_error;
 endif;
 
 
 
-//falls man den abmelden button drückt kommt man zu login seite zurück
-  if(isset($_POST['abmelden'])):
+
+if(isset($_POST['abmelden'])):
     session_destroy();
     header('Location: login.php');
-  endif;
+endif;
 
 
 
-//die einzelnen schwierigskeitstufen
-    if(isset($_POST['difficulty'])){
 
-        $answer = $_POST['difficulty'];
+if(isset($_POST['difficulty'])){
+
+    $answer = $_POST['difficulty'];
     if ($answer == "sid1") {
         header('Location: game.php?sid=1');
     }
+}
+
+
+
+if(isset($_POST['difficulty'])){
+
+    $answer = $_POST['difficulty'];
+
+    if ($answer == "sid2") {
+        header('Location: game.php?sid=2');
     }
-    if(isset($_POST['difficulty'])){
+}
 
-        $answer = $_POST['difficulty'];
 
-        if ($answer == "sid2") {
-            header('Location: game.php?sid=2');
-        }
+
+
+if(isset($_POST['difficulty'])){
+
+    $answer = $_POST['difficulty'];
+    if ($answer == "sid3") {
+        header('Location: game.php?sid=3');
     }
+}
 
-    if(isset($_POST['difficulty'])){
-
-        $answer = $_POST['difficulty'];
-        if ($answer == "sid3") {
-            header('Location: game.php?sid=3');
-        }
-    }
-
+//action ändert difficulty
+if(isset($_POST['action']) == 'changedifficulty') {
+    $sid = $_POST['sid']; //entzieht die sid
+    $_SESSION['difficulty'] = $sid; //speichert sid in sessiondifficulty
+    $json = new JSON(); //gibt per json die änderung ans backend
+    $json->result = true;
+    $json->send();
+}
 
 ?>
+
 <!-- Buttons - sind zum Aufrufen von Start, Optionen, Bestenliste, Anleitung da -->
 <div class="row">
     <div class="col-sm-6">
         <div class="card">
-            <img class="card-img-top img-fluid" src="../logo/start.png" alt="Play">
+            <img class="card-img-top img-fluid" src="../logo/start.png" alt="Optionen">
             <div class="card-body">
                 <h5 class="card-title">Play the Game?</h5>
                 <p class="card-text">Willst du ein neues Spiel starten? Dann warte nicht und klick hier!</p>
-                <form method="get" action="./game.php">
-                    <button type="submit" class="btn btn-primary">Spiel Starten</button>
-                </form>
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#ModalOptionen">Spiel starten</button>
             </div>
         </div>
     </div>
@@ -95,7 +112,6 @@ endif;
     </div>
 </div>
 
-
 <!-- Modal Optionen-->
 <div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -106,19 +122,14 @@ endif;
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <h5>Schwierigkeit</h5>
             <form action="" method="POST">
-                <input type="radio" name="difficulty" value="sid1" checked> Easy<br>
+                <input type="radio" name="difficulty" value="sid1"> Easy<br>
                 <input type="radio" name="difficulty" value="sid2"> Medium<br>
-                <input type="radio" name="difficulty" value="sid3"> Difficult<br>
-                <hr>
-                <input type="submit" class="btn btn-secondary" value="Starten">
+                <input type="radio" name="difficulty" value="sid3"> Difficult
+                <p><input type="submit" value="Starten"></p>
             </form>
-            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
             </div>
         </div>
     </div>
@@ -135,50 +146,53 @@ endif;
                 </button>
             </div>
             <div class="modal-body">
-<?php
-/* Über das SQL Skript in der Variable $sql wird die Bestenliste erstellt, dabei wird über echo der jeweilige HTML Code ausgegeben.
-Im unteren Bereich wird über fetch, die Daten aus der Variable $res ausgegeben und in eine Liste gespeichert */
-$nr = 1;
-$sql = "SELECT username, vname, nname, mail, CONCAT('€ ',FORMAT(price, 2)) AS price, time FROM tPlayer tP INNER JOIN tScoreboard tS ON tP.PID = tS.PID ORDER BY tS.price DESC";
-if ($res = $db->query($sql)) {
-    if ($res->num_rows > 0) {
-        echo "<table class='table table-hover'>";
-        echo "<thead>";
-        echo "<tr>";
-        echo "<th scope='col'>#</th>";
-        echo "<th scope='col'>Username</th>";
-        echo "<th scope='col'>Vorname</th>";
-        echo "<th scope='col'>Nachname</th>";
-        echo "<th scope='col'>Mail</th>";
-        echo "<th scope='col'>Preis</th>";
-        echo "<th scope='col'>Zeit</th>";
-        echo "</tr>";
-        echo "</thead>";
-        while ($row = $res->fetch_array())
-        {
-            echo "<tr>";
-            echo "<td>".$nr."</td>";
-            echo "<td>".$row['username']."</td>";
-            echo "<td>".$row['vname']."</td>";
-            echo "<td>".$row['nname']."</td>";
-            echo "<td>".$row['mail']."</td>";
-            echo "<td>".$row['price']."</td>";
-            echo "<td>".$row['time']."</td>";
-            echo "</tr>";
-            $nr++;
-        }
-        echo "</table>";
-        $res->free();
-    }
-    else {
-        echo "No matching records are found.";
-    }
-}
-else {
-    echo "ERROR: Could not able to execute $sql. "
-        .$db->error;
-}
-?>
+
+
+                <?php
+
+                /* Über das SQL Skript in der Variable $sql wird die Bestenliste erstellt, dabei wird über echo der jeweilige HTML Code ausgegeben.
+                Im unteren Bereich wird über fetch, die Daten aus der Variable $res ausgegeben und in eine Liste gespeichert */
+                $nr = 1;
+                $sql = "SELECT username, vname, nname, mail, CONCAT('€ ',FORMAT(price, 2)) AS price, time FROM tPlayer tP INNER JOIN tScoreboard tS ON tP.PID = tS.PID";
+                if ($res = $db->query($sql)) {
+                    if ($res->num_rows > 0) {
+                        echo "<table class='table table-hover'>";
+                        echo "<thead>";
+                        echo "<tr>";
+                        echo "<th scope='col'>#</th>";
+                        echo "<th scope='col'>Username</th>";
+                        echo "<th scope='col'>Vorname</th>";
+                        echo "<th scope='col'>Nachname</th>";
+                        echo "<th scope='col'>Mail</th>";
+                        echo "<th scope='col'>Preis</th>";
+                        echo "<th scope='col'>Zeit</th>";
+                        echo "</tr>";
+                        echo "</thead>";
+                        while ($row = $res->fetch_array())
+                        {
+                            echo "<tr>";
+                            echo "<td>".$nr."</td>";
+                            echo "<td>".$row['username']."</td>";
+                            echo "<td>".$row['vname']."</td>";
+                            echo "<td>".$row['nname']."</td>";
+                            echo "<td>".$row['mail']."</td>";
+                            echo "<td>".$row['price']."</td>";
+                            echo "<td>".$row['time']."</td>";
+                            echo "</tr>";
+                            $nr++;
+                        }
+                        echo "</table>";
+                        $res->free();
+                    }
+                    else {
+                        echo "No matching records are found.";
+                    }
+                }
+                else {
+                    echo "ERROR: Could not able to execute $sql. "
+                        .$db->error;
+                }
+                ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -212,15 +226,39 @@ else {
 </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 
 
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script type="text/javascript"> // javascript zur schwierigkeitsänderung
+    $(document).ready(function() {
+        $('#difficultySettings').find('.form-check-input').bind('click', function() { //beim click wird die meldung gebracht das es geändert wurde. // bind wird benutzt um sich auf mehrere elemente zu fokusieren und nicht nur eins
+            //
+            $.ajax({
+                'method': 'post',  //ajax braucht methode um etwas zu bearbeiten
+                'url': 'homelogin.php' // url wo etwas passieren soll
+                'data': {'sid': $(this).val(), 'action': 'changeDifficulty'}, // was geändert werden soll, die schwierigkeit
+                'success': function(data, xhr) {
+                    //awesome
+                    $('#ModalOptionen').modal('hide'); // um modal zu verstecken
+
+                }
+            });
+            //console.log();
+        });
+    });
+</script>
+-->
 </body>
-
 <?php
 include "./parts/footer.php";
 ?>
