@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
@@ -20,8 +20,10 @@ SET time_zone = "+00:00";
 
 --
 -- Datenbank: `quitz`
---
+CREATE DATABASE IF NOT EXISTS QUITZ;
 
+-- Datenbank: 'quitz' verwenden
+USE QUITZ;
 -- --------------------------------------------------------
 
 --
@@ -62,16 +64,16 @@ CREATE TABLE `tplayer` (
 --
 
 INSERT INTO `tplayer` (`PID`, `username`, `vname`, `nname`, `mail`, `pwd`) VALUES
-(1, 'test', 'test', 'test', 'test.ak@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(2, 'wsw', 'Wendy', 'Swinger', 'wswinger@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(3, 'hme', 'Hans', 'Meier', 'wswinger@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(4, 'pkl', 'Peter', 'Klein', 'pkl@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(5, 'jel', 'Josef', 'Ellinger', 'jell@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(6, 'mma', 'Michael', 'Mayer', 'mem@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(7, 'jli', 'Jessica', 'Liebherr', 'jlie@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(8, 'mme', 'Markus', 'Meister', 'mame@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(9, 'mem', 'Matthias', 'Emil', 'maem@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81'),
-(10, 'che', 'Christian', 'Hell', 'che@hotmail.com', '$2y$10$COahizO/AFyjGCRPEidN0.Zw3/PeVTiHRyRuKmM/l81');
+(1, 'test', 'test', 'test', 'test.ak@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(2, 'wsw', 'Wendy', 'Swinger', 'wswinger@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(3, 'hme', 'Hans', 'Meier', 'wswinger@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(4, 'pkl', 'Peter', 'Klein', 'pkl@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(5, 'jel', 'Josef', 'Ellinger', 'jell@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(6, 'mma', 'Michael', 'Mayer', 'mem@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(7, 'jli', 'Jessica', 'Liebherr', 'jlie@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(8, 'mme', 'Markus', 'Meister', 'mame@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(9, 'mem', 'Matthias', 'Emil', 'maem@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4'),
+(10, 'che', 'Christian', 'Hell', 'che@hotmail.com', '16d7a4fca7442dda3ad93c9a726597e4');
 
 -- --------------------------------------------------------
 
