@@ -119,7 +119,7 @@ if(isset($_POST['action']) == 'answer') {
 
     $alreadyAnsweredQuestions[] = $_POST['fid'];
 
-   $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
+    $_SESSION['questionsAsked'] = serialize($alreadyAnsweredQuestions);
 }
 
 /*if(isset($_POST['los']) == 'jok') {
@@ -159,13 +159,12 @@ $db->close();
         function toggle_div_fun(id) {
 
 
-        var divelement=document.getElementById(id);
-        divelement.style.display='none';
+            var divelement=document.getElementById(id);
+            divelement.style.display='none';
         }
 
     </script>
     <link rel="stylesheet" href="../stylesheets/spielfeld.css">
-
 </head>
 <body>
 
@@ -201,31 +200,28 @@ $db->close();
 
 </div>
 
-
-
-</div>
-<form method="post">
-<div>
-    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker1" name="j1">50/50</button>
-
-</div>
-
-<div>
-    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker2" name="j2">50/50</button>
-
-</div>
-
-<div>
-    <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker3" name="j3">50/50</button>
-
-</div>
-<input type="hidden" name="los" value="jok">
-</form>
-
 <div class="progress"> <!-- progress leiste ist auf 30 sekunden getrimmt, das man weiss wie viel zeit noch vorhanden ist-->
     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
+</div>
+<form method="post">
+    <div>
+        <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker1" name="j1">50/50</button>
+
+    </div>
+
+    <div>
+        <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker2" name="j2">50/50</button>
+
+    </div>
+
+    <div>
+        <button onclick="toggle_div_fun('fa');"  class="btn btn-primary" class="Joker3" name="j3">50/50</button>
+
+    </div>
+    <input type="hidden" name="los" value="jok">
+</form>
 <div class="Liste">
     <ul class="list-group">
         <li class="list-group-item">1.000.000</li>

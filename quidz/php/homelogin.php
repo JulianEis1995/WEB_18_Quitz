@@ -36,12 +36,51 @@ endif;
     header('Location: login.php');
   endif;
 
-if(isset($_POST['spiel'])):
-    header('Location: game.php');
-endif;
 
 
 
+    if(isset($_POST['difficulty'])){
+
+        $answer = $_POST['difficulty'];
+    if ($answer == "sid1") {
+        header('Location: game.php?sid=1');
+    }
+    }
+
+
+
+    if(isset($_POST['difficulty'])){
+
+        $answer = $_POST['difficulty'];
+
+        if ($answer == "sid2") {
+            header('Location: game.php?sid=2');
+        }
+    }
+
+
+
+
+    if(isset($_POST['difficulty'])){
+
+        $answer = $_POST['difficulty'];
+        if ($answer == "sid3") {
+            header('Location: game.php?sid=3');
+        }
+    }
+
+
+
+
+  //action ändert difficulty
+  /*if($_POST['action'] == 'changedifficulty') {
+      $sid = $_POST['sid']; //entzieht die sid
+      $_SESSION['difficulty'] = $sid; //speichert sid in sessiondifficulty
+      $json = new JSON(); //gibt per json die änderung ans backend
+      $json->result = true;
+      $json->send();
+  }
+*/
 ?>
 <!-- Buttons -->
 
@@ -49,23 +88,11 @@ endif;
 <div class="row">
     <div class="col-sm-6">
         <div class="card">
-            <img class="card-img-top img-fluid" src="../logo/start.png" alt="Play">
+            <img class="card-img-top img-fluid" src="../logo/optionen.png" alt="Optionen">
             <div class="card-body">
                 <h5 class="card-title">Play the Game?</h5>
                 <p class="card-text">Willst du ein neues Spiel starten? Dann warte nicht und klick hier!</p>
-                <form action="" method="post">
-                    <button type="submit" name="spiel" class="btn btn-primary">Spiel starten</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="card">
-            <img class="card-img-top img-fluid" src="../logo/optionen.png" alt="Optionen">
-            <div class="card-body">
-                <h5 class="card-title">Want to configure something?</h5>
-                <p class="card-text">Ist dir das Spiel zu leicht oder zu schwer? Dann passe die Schwierigkeit an!</p>
-                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#ModalOptionen">Optionen</button>
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#ModalOptionen">Spiel starten</button>
             </div>
         </div>
     </div>
@@ -89,8 +116,20 @@ endif;
             </div>
         </div>
     </div>
-</div>
 
+<div class="col-sm-6">
+    <div class="card">
+        <img class="card-img-top img-fluid" src="../logo/start.png" alt="Play">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+            <form action="" method="post">
+                <button type="submit" name="spiel" class="btn btn-primary"></button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 <!-- Modal Optionen-->
 <div class="modal fade" id="ModalOptionen" tabindex="-1" role="dialog" aria-labelledby="ModalOptionenTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -101,27 +140,12 @@ endif;
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <h5>Schwierigkeit</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="difficulty" id="difficulty1" value="easy" checked>
-                    <label class="form-check-label" for="difficulty1">
-                        Leicht
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="difficulty" id="difficulty2" value="medium">
-                    <label class="form-check-label" for="difficulty2">
-                        Mittel
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="difficulty" id="difficulty3" value="difficult">
-                    <label class="form-check-label" for="difficulty3">
-                        Schwer
-                    </label>
-                </div>
-            </div>
+            <form action="" method="POST">
+                <input type="radio" name="difficulty" value="sid1"> Easy<br>
+                <input type="radio" name="difficulty" value="sid2"> Medium<br>
+                <input type="radio" name="difficulty" value="sid3"> Difficult
+                <p><input type="submit" value="Starten"></p>
+            </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -218,9 +242,35 @@ else {
 
 <!-- Optional JavaScript -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="../js/bootstrap.min.js"></script>
+
+<!--<script type="text/javascript"> // javascript zur schwierigkeitsänderung
+    $(document).ready(function() {
+        $('#difficultySettings').find('.form-check-input').bind('click', function() { //beim click wird die meldung gebracht das es geändert wurde. // bind wird benutzt um sich auf mehrere elemente zu fokusieren und nicht nur eins
+            //
+            $.ajax({
+                'method': 'post',  //ajax braucht methode um etwas zu bearbeiten
+                'url': 'homelogin.php' // url wo etwas passieren soll
+                'data': {'sid': $(this).val(), 'action': 'changeDifficulty'}, // was geändert werden soll, die schwierigkeit
+                'success': function(data, xhr) {
+                    //awesome
+                    $('#ModalOptionen').modal('hide'); // um modal zu verstecken
+
+                }
+            });
+            //console.log();
+        });
+    });
+</script>
+-->
 </body>
 <footer></footer>
 
