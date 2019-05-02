@@ -97,7 +97,7 @@ CREATE TABLE `tquestions` (
 --
 
 INSERT INTO `tquestions` (`FID`, `question`, `a1`, `a2`, `a3`, `a4`, `ra`, `SID`) VALUES
-(1, 'Was trägt man eher unfreiwillig?', 'Halskette', 'Armreif', 'Augenringe', 'Piercing', 'a3', 1),
+(1, 'Was trägt man eher unfreiwillig?', 'Halskette', 'Armreif', 'Augenringe', 'Piercing', 'Augenringe', 1),
 (2, 'Wer war Kurfürst von Sachsen und König von Polen?', 'November der Große', 'Februar der Fromme', 'Juni der Schöne', 'August der Starke', 'August der Starke', 3),
 (3, 'In welcher Einheit gibt man die Größe von Bildschirmen oder Disketten an?', 'Zoll', 'Polizei', 'Rettung', 'Feuerwehr', 'Zoll', 1),
 (4, 'Wie heißt eine Kulturart des Lauchs?', 'Brigidde', 'Schalotte', 'Schantall', 'Dschenniffa', 'Schalotte', 3),
